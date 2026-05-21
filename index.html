@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JC Tree Experts | ISA Certified Arborists | Bay Area Since 1986</title>
+<meta name="description" content="JC Tree Experts — ISA Certified Arborists serving the Bay Area since 1986. Tree removal, pruning, stump grinding & more. Lic. #1082101. Call 408-858-6123.">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,'Helvetica Neue',Helvetica,sans-serif;background:#f5f3ee;color:#2e2c25;overflow-x:hidden;line-height:1.6}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+
+:root{
+  --gold:#8C8A3E;
+  --gold-l:#b0ae54;
+  --gold-d:#6b6530;
+  --dark:#1c1a15;
+  --dark2:#272520;
+  --dark3:#3a3830;
+  --green:#2d6a2d;
+  --cream:#f5f3ee;
+  --cream2:#ede9df;
+  --text:#2e2c25;
+  --textm:#5a5850;
+  --textl:#8a8880;
+  --white:#ffffff;
+  --serif:Georgia,'Times New Roman',serif;
+  --sans:-apple-system,'Helvetica Neue',Helvetica,sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+  --sh-sm:0 2px 8px rgba(28,26,21,.08);
+  --sh-md:0 8px 32px rgba(28,26,21,.14);
+  --sh-lg:0 20px 60px rgba(28,26,21,.18);
+}
+
+/* ── FADE ANIMATIONS ── */
+.fu{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.fu.vis{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}.d5{transition-delay:.5s}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes heroZoom{from{transform:scale(1.1)}to{transform:scale(1)}}
+@keyframes scrollPulse{0%,100%{opacity:.4;transform:scaleY(1)}50%{opacity:.9;transform:scaleY(1.3)}}
+
+/* ── CONTAINER ── */
+.wrap{max-width:1200px;margin:0 auto;padding:0 2rem}
+
+/* ── BUTTONS ── */
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.875rem 2rem;font-family:var(--sans);font-size:.8rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;border-radius:2px;cursor:pointer;border:2px solid transparent;transition:all .25s var(--ease);white-space:nowrap;line-height:1}
+.btn svg{width:15px;height:15px;flex-shrink:0}
+.btn-gold{background:var(--gold);color:#fff;border-color:var(--gold)}
+.btn-gold:hover{background:var(--gold-d);border-color:var(--gold-d);transform:translateY(-2px);box-shadow:0 8px 24px rgba(140,138,62,.35)}
+.btn-outline{background:transparent;color:#fff;border-color:rgba(255,255,255,.55)}
+.btn-outline:hover{background:rgba(255,255,255,.1);border-color:#fff;transform:translateY(-2px)}
+.btn-ghost-gold{background:transparent;color:var(--gold);border-color:var(--gold)}
+.btn-ghost-gold:hover{background:var(--gold);color:#fff;transform:translateY(-2px)}
+.btn-dark{background:var(--dark);color:#fff;border-color:var(--dark)}
+.btn-dark:hover{background:var(--dark3);transform:translateY(-2px);box-shadow:var(--sh-md)}
+
+/* ── NAV ── */
+#nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.25rem 0;transition:all .4s var(--ease)}
+#nav.scrolled{background:rgba(28,26,21,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding:.75rem 0;box-shadow:0 2px 20px rgba(0,0,0,.3)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:2rem}
+.nav-logo{display:flex;align-items:center;gap:.75rem;flex-shrink:0}
+.nav-logo img{width:46px;height:46px;border-radius:50%;object-fit:cover}
+.nav-logo-name{font-family:var(--serif);font-size:1.05rem;color:#fff;line-height:1.2}
+.nav-logo-est{display:block;font-family:var(--sans);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-l)}
+.nav-links{display:flex;align-items:center;gap:2.25rem;list-style:none}
+.nav-links a{font-size:.75rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.82);transition:color .2s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;right:100%;height:1px;background:var(--gold);transition:right .3s var(--ease)}
+.nav-links a:hover{color:#fff}
+.nav-links a:hover::after{right:0}
+.nav-cta{flex-shrink:0}
+
+/* hamburger */
+.hbg{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}
+.hbg span{display:block;width:24px;height:2px;background:#fff;transition:all .3s var(--ease);transform-origin:center}
+.hbg.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hbg.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.hbg.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* mobile menu */
+.mob-menu{position:fixed;inset:0;background:var(--dark);z-index:999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .35s var(--ease),visibility .35s var(--ease)}
+.mob-menu.open{opacity:1;visibility:visible;pointer-events:all}
+.mob-menu a{font-family:var(--serif);font-size:2rem;color:#fff;transition:color .2s}
+.mob-menu a:hover{color:var(--gold)}
+.mob-menu .btn{font-size:.8rem}
+
+/* ── HERO ── */
+#hero{position:relative;height:100vh;min-height:680px;display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:-8%;background:url('images/tree-removal.jpg') center 30%/cover;animation:heroZoom 14s ease-out forwards}
+.hero-ov{position:absolute;inset:0;background:linear-gradient(170deg,rgba(28,26,21,.38) 0%,rgba(28,26,21,.58) 50%,rgba(28,26,21,.78) 100%)}
+.hero-c{position:relative;z-index:1;max-width:760px}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:.75rem;font-size:.72rem;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--gold-l);margin-bottom:1.5rem;animation:fadeUp .8s .2s var(--ease) both}
+.hero-eyebrow::before,.hero-eyebrow::after{content:'';display:inline-block;width:28px;height:1px;background:var(--gold)}
+.hero-h1{font-family:var(--serif);font-size:clamp(2.4rem,5.5vw,4.4rem);color:#fff;line-height:1.1;margin-bottom:1.5rem;animation:fadeUp .8s .4s var(--ease) both}
+.hero-h1 em{font-style:italic;color:var(--gold-l)}
+.hero-sub{font-size:1.05rem;color:rgba(255,255,255,.82);line-height:1.7;margin-bottom:2.5rem;max-width:540px;animation:fadeUp .8s .6s var(--ease) both}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3rem;animation:fadeUp .8s .8s var(--ease) both}
+.hero-badges{display:flex;gap:1.25rem;flex-wrap:wrap;animation:fadeUp .8s 1s var(--ease) both}
+.hbadge{display:flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(8px);padding:.5rem 1rem;border-radius:2px}
+.hbadge svg{width:14px;height:14px;color:var(--gold-l);flex-shrink:0}
+.hbadge span{font-size:.72rem;font-weight:500;letter-spacing:.05em;color:rgba(255,255,255,.9)}
+.scroll-ind{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;animation:fadeUp 1s 1.4s var(--ease) both;cursor:pointer}
+.scroll-ind span{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.45)}
+.scroll-line{width:1px;height:36px;background:linear-gradient(to bottom,transparent,rgba(255,255,255,.5));animation:scrollPulse 2s ease-in-out infinite}
+
+/* ── STATS ── */
+#stats{background:var(--dark);padding:2rem 0}
+.stats-row{display:flex;justify-content:space-around;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.stat{text-align:center;position:relative}
+.stat+.stat::before{content:'';position:absolute;left:calc(-50% - .5rem);top:15%;bottom:15%;width:1px;background:rgba(255,255,255,.1)}
+.stat-n{font-family:var(--serif);font-size:2.25rem;color:var(--gold-l);line-height:1;margin-bottom:.2rem}
+.stat-l{font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.45)}
+
+/* ── SERVICES ── */
+#services{padding:6rem 0;background:var(--cream)}
+.sec-label{font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.sec-h2{font-family:var(--serif);font-size:clamp(1.9rem,3.5vw,2.9rem);color:var(--dark);line-height:1.15;margin-top:.75rem}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:3.5rem}
+.svc-card{background:#fff;overflow:hidden;transition:transform .4s var(--ease),box-shadow .4s var(--ease);position:relative;cursor:pointer}
+.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease);z-index:1}
+.svc-card:hover{transform:translateY(-8px);box-shadow:var(--sh-lg);z-index:2}
+.svc-card:hover::before{transform:scaleX(1)}
+.svc-img{height:240px;overflow:hidden}
+.svc-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.svc-card:hover .svc-img img{transform:scale(1.06)}
+.svc-body{padding:1.625rem 1.75rem 1.875rem}
+.svc-num{font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem}
+.svc-name{font-family:var(--serif);font-size:1.3rem;color:var(--dark);margin-bottom:.65rem;line-height:1.25}
+.svc-desc{font-size:.875rem;color:var(--textm);line-height:1.7;margin-bottom:1.125rem}
+.svc-link{display:inline-flex;align-items:center;gap:.45rem;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-d);transition:gap .2s}
+.svc-link svg{width:13px;height:13px;transition:transform .2s}
+.svc-link:hover{gap:.7rem}
+.svc-link:hover svg{transform:translateX(3px)}
+
+/* ── ABOUT ── */
+#about{background:var(--dark);padding:6rem 0;position:relative;overflow:hidden}
+#about::before{content:'';position:absolute;top:-80px;right:-80px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(45,106,45,.14) 0%,transparent 70%);pointer-events:none}
+.about-grid{display:grid;grid-template-columns:1fr 400px;gap:5.5rem;align-items:center}
+.about-eyebrow{color:var(--gold)}
+.about-h2{font-family:var(--serif);font-size:clamp(1.7rem,3vw,2.6rem);color:#fff;margin:1rem 0 1.5rem;line-height:1.2}
+.about-body{font-size:1rem;color:rgba(255,255,255,.7);line-height:1.85;margin-bottom:1.75rem}
+.about-pts{list-style:none;display:flex;flex-direction:column;gap:.85rem;margin-bottom:2.25rem}
+.about-pts li{display:flex;align-items:flex-start;gap:.875rem;font-size:.9rem;color:rgba(255,255,255,.75);line-height:1.6}
+.about-pts li::before{content:'';flex-shrink:0;width:18px;height:18px;margin-top:2px;border-radius:50%;background:var(--gold) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2.5'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") center/11px no-repeat}
+.about-right{display:flex;flex-direction:column;align-items:center;gap:1.75rem}
+.isa-wrap{background:#fff;padding:2.25rem;border-radius:4px;text-align:center;box-shadow:0 24px 60px rgba(0,0,0,.3);width:100%}
+.isa-wrap img{width:140px;margin:0 auto}
+.isa-wrap p{margin-top:.875rem;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--textm)}
+.cred-strip{display:flex;width:100%}
+.cred{flex:1;text-align:center;padding:1.25rem .5rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08)}
+.cred+.cred{border-left:none}
+.cred-v{font-family:var(--serif);font-size:1.35rem;color:var(--gold-l);line-height:1;margin-bottom:.2rem}
+.cred-k{font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.4)}
+
+/* ── MULCH ── */
+#mulch{position:relative;min-height:500px;display:flex;align-items:center}
+.mulch-bg{position:absolute;inset:0;background:url('images/mulch.jpg') center/cover;background-attachment:fixed}
+.mulch-ov{position:absolute;inset:0;background:linear-gradient(135deg,rgba(28,20,10,.9) 0%,rgba(44,34,14,.84) 100%)}
+.mulch-c{position:relative;z-index:1;max-width:580px;padding:5rem 0}
+.mulch-tag{display:inline-block;background:var(--gold);color:#fff;font-size:.62rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:.32rem .875rem;margin-bottom:1.5rem}
+.mulch-h2{font-family:var(--serif);font-size:clamp(1.9rem,4vw,3.4rem);color:#fff;line-height:1.1;margin-bottom:1.25rem}
+.mulch-body{font-size:1rem;color:rgba(255,255,255,.76);line-height:1.8;margin-bottom:2rem}
+
+/* ── GIVING BACK ── */
+#giving{position:relative;min-height:480px;display:flex;align-items:center;padding:5rem 0}
+.giving-bg{position:absolute;inset:0;background:url('images/giving-back.jpg') center 40%/cover;background-attachment:fixed}
+.giving-ov{position:absolute;inset:0;background:rgba(8,26,8,.72)}
+.giving-c{position:relative;z-index:1;max-width:640px;margin:0 auto;text-align:center}
+.giving-ey{font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:rgba(190,215,150,.9);margin-bottom:1.25rem}
+.giving-h2{font-family:var(--serif);font-size:clamp(1.75rem,3.5vw,2.75rem);color:#fff;line-height:1.2;margin-bottom:1.25rem}
+.giving-body{font-size:1rem;color:rgba(255,255,255,.76);line-height:1.85}
+
+/* ── CONTACT ── */
+#contact{background:var(--dark2);padding:6rem 0}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.contact-ey{color:var(--gold);margin-bottom:1rem}
+.contact-h2{font-family:var(--serif);font-size:clamp(1.75rem,3vw,2.5rem);color:#fff;margin-bottom:1.25rem;line-height:1.2}
+.contact-intro{color:rgba(255,255,255,.62);line-height:1.8;margin-bottom:2.5rem}
+.big-phone{font-family:var(--serif);font-size:clamp(1.75rem,3.5vw,2.75rem);color:var(--gold-l);letter-spacing:.02em;display:block;transition:color .2s;margin-bottom:.3rem}
+.big-phone:hover{color:#fff}
+.phone-label{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.38)}
+.contact-info{display:flex;flex-direction:column;gap:1.375rem;margin-top:2rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.1)}
+.ci{display:flex;align-items:flex-start;gap:1rem}
+.ci-icon{width:36px;height:36px;background:rgba(140,138,62,.15);border-radius:2px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ci-icon svg{width:15px;height:15px;color:var(--gold)}
+.ci-text p:first-child{font-size:.67rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:.18rem}
+.ci-text p:last-child{font-size:.875rem;color:rgba(255,255,255,.78)}
+
+/* form */
+.cform{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2.25rem;border-radius:4px}
+.fg{margin-bottom:1.2rem}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.fg label{display:block;font-size:.68rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.48);margin-bottom:.45rem}
+.fg input,.fg select,.fg textarea{width:100%;padding:.875rem 1rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:2px;color:#fff;font-family:var(--sans);font-size:.9rem;outline:none;transition:border-color .2s,background .2s;appearance:none;-webkit-appearance:none}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--gold);background:rgba(255,255,255,.09)}
+.fg input::placeholder,.fg textarea::placeholder{color:rgba(255,255,255,.22)}
+.fg select option{background:var(--dark);color:#fff}
+.fg textarea{resize:vertical;min-height:96px}
+.fg.err input,.fg.err select,.fg.err textarea{border-color:#e05555}
+.ferr{font-size:.7rem;color:#e07070;margin-top:.3rem;display:none}
+.fg.err .ferr{display:block}
+.fsub{width:100%;padding:1rem;margin-top:.25rem;justify-content:center}
+.f-success{display:none;text-align:center;padding:2rem}
+.f-success.show{display:block}
+.f-success h3{font-family:var(--serif);font-size:1.5rem;color:#fff;margin-bottom:.75rem}
+.f-success p{color:rgba(255,255,255,.6)}
+
+/* ── FOOTER ── */
+footer{background:var(--dark);padding:3.5rem 0 2rem;border-top:1px solid rgba(255,255,255,.06)}
+.ft-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:4rem;margin-bottom:2.75rem}
+.ft-brand img{width:54px;border-radius:50%;margin-bottom:.875rem;opacity:.88}
+.ft-phone{font-family:var(--serif);font-size:1.4rem;color:var(--gold-l);display:inline-block;margin:.625rem 0 .25rem;transition:color .2s}
+.ft-phone:hover{color:#fff}
+.ft-lic{font-size:.68rem;letter-spacing:.1em;color:rgba(255,255,255,.3)}
+.ft-brand p{margin-top:.875rem;font-size:.85rem;color:rgba(255,255,255,.48);line-height:1.7;max-width:280px}
+.ft-col h4{font-size:.68rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:1.125rem}
+.ft-links{list-style:none;display:flex;flex-direction:column;gap:.6rem}
+.ft-links a{font-size:.875rem;color:rgba(255,255,255,.58);transition:color .2s}
+.ft-links a:hover{color:var(--gold-l)}
+.ft-isa{margin-top:1.5rem}
+.ft-isa img{height:46px;width:auto;opacity:.7}
+.ft-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:2rem;border-top:1px solid rgba(255,255,255,.06)}
+.ft-bottom p{font-size:.72rem;color:rgba(255,255,255,.28)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  .about-grid{grid-template-columns:1fr;gap:3rem}
+  .about-right{flex-direction:row;flex-wrap:wrap;justify-content:center}
+  .contact-grid{grid-template-columns:1fr;gap:3rem}
+}
+@media(max-width:768px){
+  .nav-links,.nav-cta{display:none}
+  .hbg{display:flex}
+  .svc-grid{grid-template-columns:1fr 1fr}
+  .ft-grid{grid-template-columns:1fr 1fr}
+  .ft-bottom{flex-direction:column;gap:.875rem;text-align:center}
+  .frow{grid-template-columns:1fr}
+  .mulch-bg,.giving-bg{background-attachment:scroll}
+  .stat+.stat::before{display:none}
+}
+@media(max-width:540px){
+  .svc-grid{grid-template-columns:1fr}
+  .ft-grid{grid-template-columns:1fr;gap:2.25rem}
+  .hero-ctas{flex-direction:column}
+  .hero-ctas .btn{justify-content:center}
+  .hero-badges{gap:.75rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="wrap">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <img src="images/logo.png" alt="JC Tree Experts logo">
+        <div>
+          <div class="nav-logo-name">JC Tree Experts</div>
+          <span class="nav-logo-est">Est. 1986</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#mulch">Free Mulch</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="#contact" class="btn btn-gold">Get a Free Quote</a>
+      </div>
+      <button class="hbg" id="hbg" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mobMenu">
+  <a href="#services" class="mob-link">Services</a>
+  <a href="#about" class="mob-link">About</a>
+  <a href="#mulch" class="mob-link">Free Mulch</a>
+  <a href="#contact" class="mob-link">Contact</a>
+  <a href="#contact" class="btn btn-gold mob-link">Get a Free Quote</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-ov"></div>
+  <div class="wrap">
+    <div class="hero-c">
+      <div class="hero-eyebrow">Bay Area Tree Experts</div>
+      <h1 class="hero-h1">Bay Area's Most<br>Trusted Tree <em>Experts</em><br>Since 1986</h1>
+      <p class="hero-sub">ISA Certified Arborists. Fully licensed and insured. Serving residential and commercial clients across the Bay Area with precision, safety, and genuine care for over 38 years.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn btn-gold">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+          Get a Free Quote
+        </a>
+        <a href="tel:4088586123" class="btn btn-outline">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 010 2.19 2 2 0 012.1 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
+          Call 408-858-6123
+        </a>
+      </div>
+      <div class="hero-badges">
+        <div class="hbadge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span>ISA Certified</span>
+        </div>
+        <div class="hbadge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span>Est. 1986</span>
+        </div>
+        <div class="hbadge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          <span>Licensed &amp; Insured</span>
+        </div>
+        <div class="hbadge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Free Estimates</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-ind" id="scrollInd">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div id="stats">
+  <div class="wrap">
+    <div class="stats-row">
+      <div class="stat fu"><div class="stat-n"><span class="cnt" data-t="38">0</span>+</div><div class="stat-l">Years in Business</div></div>
+      <div class="stat fu d1"><div class="stat-n"><span class="cnt" data-t="5000">0</span>+</div><div class="stat-l">Trees Removed</div></div>
+      <div class="stat fu d2"><div class="stat-n"><span class="cnt" data-t="1200">0</span>+</div><div class="stat-l">Happy Clients</div></div>
+      <div class="stat fu d3"><div class="stat-n">100%</div><div class="stat-l">Licensed &amp; Insured</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <div class="fu">
+      <p class="sec-label">What We Do</p>
+      <h2 class="sec-h2">Expert Tree Services<br>for Every Need</h2>
+    </div>
+    <div class="svc-grid">
+
+      <div class="svc-card fu">
+        <div class="svc-img"><img src="images/tree-removal.jpg" alt="Tree Removal" loading="lazy"></div>
+        <div class="svc-body">
+          <div class="svc-num">01</div>
+          <h3 class="svc-name">Tree Removal</h3>
+          <p class="svc-desc">Safe, efficient removal of trees of any size for residential and commercial properties. We handle everything from felling to full cleanup.</p>
+          <a href="#contact" class="svc-link">Get a Quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+      </div>
+
+      <div class="svc-card fu d1">
+        <div class="svc-img"><img src="images/hazard-removal.jpg" alt="Hazard Tree Removal" loading="lazy"></div>
+        <div class="svc-body">
+          <div class="svc-num">02</div>
+          <h3 class="svc-name">Hazard Tree Removal</h3>
+          <p class="svc-desc">Emergency response and proactive removal of trees posing danger to property, power lines, or safety. Available when you need us most.</p>
+          <a href="#contact" class="svc-link">Get a Quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+      </div>
+
+      <div class="svc-card fu d2">
+        <div class="svc-img"><img src="images/tree-pruning.jpg" alt="Tree Pruning" loading="lazy"></div>
+        <div class="svc-body">
+          <div class="svc-num">03</div>
+          <h3 class="svc-name">Tree Pruning</h3>
+          <p class="svc-desc">ISA-certified pruning techniques to improve structure, health, and aesthetics. We reach any height safely using state-of-the-art equipment.</p>
+          <a href="#contact" class="svc-link">Get a Quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+      </div>
+
+      <div class="svc-card fu d1">
+        <div class="svc-img"><img src="images/hedge-trimming.jpg" alt="Hedge Trimming" loading="lazy"></div>
+        <div class="svc-body">
+          <div class="svc-num">04</div>
+          <h3 class="svc-name">Hedge Trimming</h3>
+          <p class="svc-desc">Precise hedge and shrub trimming for clean, manicured results at any height and scale — residential yards to commercial campuses.</p>
+          <a href="#contact" class="svc-link">Get a Quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+      </div>
+
+      <div class="svc-card fu d2">
+        <div class="svc-img"><img src="images/stump-grinding.jpg" alt="Stump Grinding" loading="lazy"></div>
+        <div class="svc-body">
+          <div class="svc-num">05</div>
+          <h3 class="svc-name">Stump Grinding</h3>
+          <p class="svc-desc">Complete stump removal below grade, eliminating hazards and reclaiming usable yard space. Fast turnaround, minimal disruption.</p>
+          <a href="#contact" class="svc-link">Get a Quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+      </div>
+
+      <div class="svc-card fu d3">
+        <div class="svc-img"><img src="images/tree-care.jpg" alt="Tree Care & Consulting" loading="lazy"></div>
+        <div class="svc-body">
+          <div class="svc-num">06</div>
+          <h3 class="svc-name">Tree Care &amp; Consulting</h3>
+          <p class="svc-desc">Expert arborist assessments, disease diagnosis, soil care, and long-term maintenance plans to keep your trees thriving for decades.</p>
+          <a href="#contact" class="svc-link">Get a Quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div>
+        <p class="sec-label about-eyebrow fu">Our Story</p>
+        <h2 class="about-h2 fu d1">40 Years of Excellence<br>in the Bay Area</h2>
+        <p class="about-body fu d2">Since 1986, JC Tree Experts has been the Bay Area's most trusted name in professional arboriculture. Family-owned and operated, we've built our reputation on honest pricing, exceptional craftsmanship, and genuine care for every tree and property we touch.</p>
+        <ul class="about-pts fu d2">
+          <li>ISA Certified Arborists — held to the highest professional standards in the industry</li>
+          <li>Fully licensed (Lic. #1082101) and insured for your complete protection</li>
+          <li>State-of-the-art equipment including precision spider cranes and stump grinders</li>
+          <li>Residential and commercial service across the entire Bay Area</li>
+          <li>Free detailed estimates — no pressure, no hidden fees</li>
+        </ul>
+        <div class="fu d3">
+          <a href="#contact" class="btn btn-ghost-gold">Schedule a Free Estimate</a>
+        </div>
+      </div>
+      <div class="about-right fu d2">
+        <div class="isa-wrap">
+          <img src="images/isa-logo.jpg" alt="ISA Certified Arborist badge">
+          <p>ISA Certified Arborist</p>
+        </div>
+        <div class="cred-strip">
+          <div class="cred"><div class="cred-v">1986</div><div class="cred-k">Founded</div></div>
+          <div class="cred"><div class="cred-v">ISA</div><div class="cred-k">Certified</div></div>
+          <div class="cred"><div class="cred-v">#1082101</div><div class="cred-k">License</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FREE MULCH -->
+<section id="mulch">
+  <div class="mulch-bg"></div>
+  <div class="mulch-ov"></div>
+  <div class="wrap">
+    <div class="mulch-c">
+      <div class="mulch-tag fu">Free Service</div>
+      <h2 class="mulch-h2 fu d1">Free Mulch<br>Delivery</h2>
+      <p class="mulch-body fu d2">When we're chipping wood in your neighborhood, we offer free wood chip mulch to local residents and gardeners. Fresh mulch is excellent for garden beds, landscaping, and water retention — and it keeps organic material out of the landfill. Call to find out when we'll be in your area.</p>
+      <div class="fu d3">
+        <a href="tel:4088586123" class="btn btn-gold">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 010 2.19 2 2 0 012.1 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
+          Call to Request Mulch
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GIVING BACK -->
+<section id="giving">
+  <div class="giving-bg"></div>
+  <div class="giving-ov"></div>
+  <div class="wrap">
+    <div class="giving-c fu">
+      <p class="giving-ey">Giving Back</p>
+      <h2 class="giving-h2">Caring for the Urban<br>Forest &amp; Community</h2>
+      <p class="giving-body">Trees are the lungs of our neighborhoods. Beyond professional services, we're committed to the health of the Bay Area's urban canopy — partnering with city programs, supporting local parks, and educating homeowners so future generations can enjoy the same beautiful landscapes we do today.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <p class="sec-label contact-ey fu">Get In Touch</p>
+        <h2 class="contact-h2 fu d1">Get Your<br>Free Estimate</h2>
+        <p class="contact-intro fu d2">Ready to get started? Contact us for a no-obligation free estimate. We'll assess your needs and provide clear, honest pricing — no surprises.</p>
+        <a href="tel:4088586123" class="big-phone fu d3">408-858-6123</a>
+        <p class="phone-label fu d3">Call or Text Anytime</p>
+        <div class="contact-info fu d4">
+          <div class="ci">
+            <div class="ci-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="ci-text">
+              <p>Service Area</p>
+              <p>Bay Area, CA — San Jose &amp; Surrounding Cities</p>
+            </div>
+          </div>
+          <div class="ci">
+            <div class="ci-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <div class="ci-text">
+              <p>License</p>
+              <p>Lic. #1082101 — Fully Licensed &amp; Insured</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cform fu d2">
+        <form id="cform" novalidate>
+          <div class="frow">
+            <div class="fg">
+              <label for="f-name">Your Name</label>
+              <input type="text" id="f-name" name="name" placeholder="John Smith" autocomplete="name">
+              <div class="ferr">Please enter your name</div>
+            </div>
+            <div class="fg">
+              <label for="f-phone">Phone Number</label>
+              <input type="tel" id="f-phone" name="phone" placeholder="(408) 555-0100" autocomplete="tel">
+              <div class="ferr">Please enter a valid phone number</div>
+            </div>
+          </div>
+          <div class="fg">
+            <label for="f-email">Email Address</label>
+            <input type="email" id="f-email" name="email" placeholder="you@example.com" autocomplete="email">
+            <div class="ferr">Please enter a valid email address</div>
+          </div>
+          <div class="fg">
+            <label for="f-svc">Service Needed</label>
+            <select id="f-svc" name="service">
+              <option value="" disabled selected>Select a service…</option>
+              <option value="tree-removal">Tree Removal</option>
+              <option value="hazard-removal">Hazard Tree Removal</option>
+              <option value="tree-pruning">Tree Pruning</option>
+              <option value="hedge-trimming">Hedge Trimming</option>
+              <option value="stump-grinding">Stump Grinding</option>
+              <option value="tree-care">Tree Care &amp; Consulting</option>
+              <option value="free-mulch">Free Mulch Request</option>
+              <option value="other">Other / Not Sure</option>
+            </select>
+            <div class="ferr">Please select a service</div>
+          </div>
+          <div class="fg">
+            <label for="f-msg">Message <span style="opacity:.5;font-weight:400">(Optional)</span></label>
+            <textarea id="f-msg" name="message" placeholder="Tell us about your project, property size, or any specific concerns…"></textarea>
+          </div>
+          <button type="submit" class="btn btn-gold fsub">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Send My Request
+          </button>
+        </form>
+        <div class="f-success" id="fSuccess">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#8C8A3E" stroke-width="1.5" style="margin:0 auto 1rem"><circle cx="12" cy="12" r="10"/><polyline points="20 6 9 17 4 12"/></svg>
+          <h3>Message Sent!</h3>
+          <p>Thanks for reaching out. We'll be in touch within 24 hours with your free estimate.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="ft-grid">
+      <div class="ft-brand">
+        <img src="images/logo.png" alt="JC Tree Experts">
+        <a href="tel:4088586123" class="ft-phone">408-858-6123</a>
+        <p class="ft-lic">Lic. #1082101 &nbsp;·&nbsp; ISA Certified Arborist</p>
+        <p>Bay Area's trusted tree experts since 1986. Family-owned, fully licensed and insured, serving residential and commercial clients with pride.</p>
+      </div>
+      <div class="ft-col">
+        <h4>Services</h4>
+        <ul class="ft-links">
+          <li><a href="#services">Tree Removal</a></li>
+          <li><a href="#services">Hazard Tree Removal</a></li>
+          <li><a href="#services">Tree Pruning</a></li>
+          <li><a href="#services">Hedge Trimming</a></li>
+          <li><a href="#services">Stump Grinding</a></li>
+          <li><a href="#services">Tree Care &amp; Consulting</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h4>Company</h4>
+        <ul class="ft-links">
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#mulch">Free Mulch</a></li>
+          <li><a href="#giving">Giving Back</a></li>
+          <li><a href="#contact">Free Estimate</a></li>
+        </ul>
+        <div class="ft-isa">
+          <img src="images/isa-logo.jpg" alt="ISA Certified Arborist">
+        </div>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <p>© 2024 JC Tree Experts. All rights reserved.</p>
+      <p>Lic. #1082101 &nbsp;·&nbsp; Bay Area, CA &nbsp;·&nbsp; 408-858-6123</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// NAV scroll state
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 60), {passive:true});
+
+// Hamburger
+const hbg = document.getElementById('hbg');
+const mob = document.getElementById('mobMenu');
+hbg.addEventListener('click', () => {
+  hbg.classList.toggle('open');
+  mob.classList.toggle('open');
+  document.body.style.overflow = mob.classList.contains('open') ? 'hidden' : '';
+});
+document.querySelectorAll('.mob-link').forEach(l => l.addEventListener('click', () => {
+  hbg.classList.remove('open');
+  mob.classList.remove('open');
+  document.body.style.overflow = '';
+}));
+
+// Scroll indicator
+document.getElementById('scrollInd').addEventListener('click', () =>
+  document.getElementById('stats').scrollIntoView({behavior:'smooth'})
+);
+
+// Fade-up on scroll
+const fuObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vis'); fuObs.unobserve(e.target); } });
+}, {threshold:.1, rootMargin:'0px 0px -32px 0px'});
+document.querySelectorAll('.fu').forEach(el => fuObs.observe(el));
+
+// Counter animation
+const cntObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const el = e.target, target = +el.dataset.t, dur = 1800;
+    let cur = 0;
+    const step = target / (dur / 16);
+    const timer = setInterval(() => {
+      cur = Math.min(cur + step, target);
+      el.textContent = Math.floor(cur).toLocaleString();
+      if (cur >= target) clearInterval(timer);
+    }, 16);
+    cntObs.unobserve(el);
+  });
+}, {threshold:.5});
+document.querySelectorAll('.cnt').forEach(el => cntObs.observe(el));
+
+// Form validation
+const form = document.getElementById('cform');
+const fSuccess = document.getElementById('fSuccess');
+
+function validateField(f) {
+  const g = f.closest('.fg');
+  let ok = true;
+  if (f.type === 'email') ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.value.trim());
+  else if (f.type === 'tel') ok = f.value.replace(/\D/g,'').length >= 10;
+  else if (f.tagName === 'SELECT') ok = f.value !== '';
+  else ok = f.value.trim().length > 1;
+  g.classList.toggle('err', !ok);
+  return ok;
+}
+
+['f-name','f-phone','f-email','f-svc'].forEach(id => {
+  const f = document.getElementById(id);
+  f.addEventListener('blur', () => validateField(f));
+  f.addEventListener('input', () => { if (f.closest('.fg').classList.contains('err')) validateField(f); });
+});
+
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  const required = ['f-name','f-phone','f-email','f-svc'].map(id => document.getElementById(id));
+  const allOk = required.map(validateField).every(Boolean);
+  if (!allOk) return;
+
+  const name    = document.getElementById('f-name').value.trim();
+  const phone   = document.getElementById('f-phone').value.trim();
+  const email   = document.getElementById('f-email').value.trim();
+  const svc     = document.getElementById('f-svc').options[document.getElementById('f-svc').selectedIndex].text;
+  const msg     = document.getElementById('f-msg').value.trim();
+
+  const subject = encodeURIComponent('Website Inquiry — ' + svc);
+  const body = encodeURIComponent(
+    'Name: ' + name + '\n' +
+    'Phone: ' + phone + '\n' +
+    'Email: ' + email + '\n' +
+    'Service: ' + svc + '\n' +
+    (msg ? '\nMessage:\n' + msg : '')
+  );
+
+  window.location.href = 'mailto:Jctree1990@yahoo.com?subject=' + subject + '&body=' + body;
+
+  form.style.display = 'none';
+  fSuccess.classList.add('show');
+});
+</script>
+</body>
+</html>

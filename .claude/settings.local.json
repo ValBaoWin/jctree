@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(open *)",
+      "Bash(python3 -m http.server 8765)",
+      "Bash(which playwright *)",
+      "Bash(which npx *)",
+      "Bash(lsof -ti:8765)",
+      "Bash(xargs kill -9)",
+      "Bash(screencapture -x /tmp/jctree-screenshot.png)",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git commit *)"
+    ]
+  }
+}
