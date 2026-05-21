@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tree Removal | JC Tree Experts</title>
+<meta name="description" content="Expert tree removal in the Bay Area — residential, commercial, and emergency hazard removal. ISA Certified Arborists. Call 408-858-6123.">
+<link rel="stylesheet" href="styles.css">
+<style>
+.removal-intro{padding:5rem 0;background:var(--cream)}
+.removal-grid{display:grid;grid-template-columns:1fr 420px;gap:5rem;align-items:start}
+.hazard-section{background:var(--dark);padding:5rem 0;position:relative;overflow:hidden}
+.hazard-section::before{content:'';position:absolute;bottom:-60px;left:-60px;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(140,138,62,.12) 0%,transparent 70%);pointer-events:none}
+.signs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem}
+.sign-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);padding:1.5rem;border-radius:4px;transition:all .3s var(--ease)}
+.sign-card:hover{background:rgba(140,138,62,.1);border-color:var(--gold);transform:translateY(-3px)}
+.sign-icon{width:40px;height:40px;background:rgba(140,138,62,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
+.sign-icon svg{width:18px;height:18px;color:var(--gold-l)}
+.sign-card h4{font-family:var(--serif);font-size:1rem;color:#fff;margin-bottom:.5rem}
+.sign-card p{font-size:.85rem;color:rgba(255,255,255,.6);line-height:1.65}
+.process-section{padding:5rem 0;background:var(--cream2)}
+.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:2.5rem}
+.process-step{text-align:center}
+.step-num{width:56px;height:56px;border-radius:50%;background:var(--gold);color:#fff;font-family:var(--serif);font-size:1.5rem;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem}
+.step-title{font-family:var(--serif);font-size:1.05rem;color:var(--dark);margin-bottom:.5rem}
+.step-desc{font-size:.85rem;color:var(--textm);line-height:1.65}
+.step-connector{display:none}
+.emergency-strip{background:var(--gold);padding:2.5rem 0;text-align:center}
+.emergency-strip h3{font-family:var(--serif);font-size:1.75rem;color:#fff;margin-bottom:.5rem}
+.emergency-strip p{color:rgba(255,255,255,.85);margin-bottom:1.25rem}
+@media(max-width:900px){.removal-grid{grid-template-columns:1fr;gap:3rem}.signs-grid{grid-template-columns:1fr 1fr}.process-steps{grid-template-columns:1fr 1fr}}
+@media(max-width:540px){.signs-grid{grid-template-columns:1fr}.process-steps{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="wrap">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="JC Tree Experts"><div><div class="nav-logo-name">JC Tree Experts</div><span class="nav-logo-est">Est. 1986</span></div></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tree-services.html">Tree Services</a></li>
+        <li><a href="tree-removal.html">Tree Removal</a></li>
+        <li><a href="limit-liability.html">Limit Your Liability</a></li>
+        <li><a href="free-mulch.html">Free Mulch</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-socials">
+        <a href="https://www.yelp.com/biz/jc-tree-experts-san-jose" target="_blank" class="nav-social" title="Yelp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.27 13.047l-2.05.624c-.592.18-.904.81-.703 1.4l1.22 3.595c.248.73 1.1.992 1.737.535l2.38-1.702c.565-.404.632-1.208.142-1.7l-1.547-1.518c-.317-.311-.776-.394-1.18-.234z"/></svg></a>
+        <a href="https://www.instagram.com/jctreeexperts" target="_blank" class="nav-social" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://www.facebook.com/jctreeexperts" target="_blank" class="nav-social" title="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+      </div>
+      <div class="nav-cta"><a href="contact.html" class="btn btn-gold">Free Quote</a></div>
+      <button class="hbg" id="hbg" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<div class="mob-menu" id="mobMenu">
+  <a href="index.html" class="mob-link">Home</a><a href="tree-services.html" class="mob-link">Tree Services</a><a href="tree-removal.html" class="mob-link">Tree Removal</a><a href="limit-liability.html" class="mob-link">Limit Your Liability</a><a href="free-mulch.html" class="mob-link">Free Mulch</a><a href="about.html" class="mob-link">About</a><a href="contact.html" class="mob-link">Contact</a>
+  <a href="contact.html" class="btn btn-gold mob-link">Get a Free Quote</a>
+  <div class="mob-socials">
+    <a href="https://www.yelp.com/biz/jc-tree-experts-san-jose" target="_blank" class="mob-social"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.27 13.047l-2.05.624c-.592.18-.904.81-.703 1.4l1.22 3.595c.248.73 1.1.992 1.737.535l2.38-1.702c.565-.404.632-1.208.142-1.7z"/></svg></a>
+    <a href="https://www.instagram.com/jctreeexperts" target="_blank" class="mob-social"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a>
+    <a href="https://www.facebook.com/jctreeexperts" target="_blank" class="mob-social"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+  </div>
+</div>
+
+<div class="page-hero">
+  <div class="page-hero-bg" style="background-image:url('images/tree-removal.jpg');background-position:center 20%"></div>
+  <div class="page-hero-ov"></div>
+  <div class="wrap page-hero-c">
+    <div class="page-hero-label">Residential &amp; Commercial</div>
+    <h1>Tree Removal</h1>
+  </div>
+</div>
+
+<section class="removal-intro">
+  <div class="wrap">
+    <div class="removal-grid">
+      <div class="prose fu">
+        <h3>Safe, Professional Tree Removal — Any Size, Any Situation</h3>
+        <p>Whether you have a dead tree threatening your home, an overgrown tree blocking sunlight, or a hazardous tree that needs immediate attention — JC Tree Experts has the equipment, expertise, and ISA-certified knowledge to handle it safely.</p>
+        <p>We serve both residential homeowners and commercial property managers throughout the Bay Area. No job is too large or too complex for our team.</p>
+        <h3>Residential Tree Removal</h3>
+        <p>We work carefully around your landscaping, fences, pools, and structures. Our crews are trained to remove trees in tight spaces using precision rigging and spider crane equipment — no bulldozing your yard.</p>
+        <h3>Commercial Tree Removal</h3>
+        <p>We understand that your business can't stop. We schedule commercial work to minimize disruption, and our crews work efficiently to complete the job on time. We handle HOA common areas, parking lots, commercial campuses, and more.</p>
+        <ul>
+          <li>Complete removal from stump to treetop</li>
+          <li>Full debris cleanup and haul-away</li>
+          <li>Optional stump grinding add-on</li>
+          <li>Free mulch delivery from chipped material</li>
+        </ul>
+        <a href="contact.html" class="btn btn-gold" style="margin-top:.5rem">Schedule a Free Assessment</a>
+      </div>
+      <div class="fu d2">
+        <img src="images/hazard-removal.jpg" alt="Hazard tree removal" style="width:100%;border-radius:4px;box-shadow:var(--sh-lg);margin-bottom:1.5rem">
+        <div class="callout">
+          <p><strong>Emergency Tree Removal?</strong><br>We respond to storm damage and urgent hazards. Call us directly at <a href="tel:4088586123" style="color:var(--gold-d);font-weight:600">408-858-6123</a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hazard-section">
+  <div class="wrap">
+    <div class="fu">
+      <p class="sec-label" style="color:var(--gold)">Know the Warning Signs</p>
+      <h2 class="sec-h2-light">When Does a Tree Need to Come Down?</h2>
+      <p style="color:rgba(255,255,255,.65);margin-top:.875rem;max-width:580px;line-height:1.8">Our free property evaluations look for these critical warning signs. Catching them early protects your property — and your liability.</p>
+    </div>
+    <div class="signs-grid">
+      <div class="sign-card fu">
+        <div class="sign-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+        <h4>Cracks &amp; Splits</h4>
+        <p>Cracks in the trunk, major limbs, or bark are serious structural warning signs that can lead to sudden failure.</p>
+      </div>
+      <div class="sign-card fu d1">
+        <div class="sign-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+        <h4>Decay &amp; Rot</h4>
+        <p>Fungal growth, soft wood, or hollow sections at the base or in the crown indicate internal decay that weakens the tree.</p>
+      </div>
+      <div class="sign-card fu d2">
+        <div class="sign-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <h4>Proximity to Structures</h4>
+        <p>Trees growing into rooflines, foundations, or utility lines need assessment before they cause costly damage.</p>
+      </div>
+      <div class="sign-card fu d1">
+        <div class="sign-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
+        <h4>Pest Infestation</h4>
+        <p>Bark beetles, borers, or carpenter ants can devastate a tree's structural integrity from the inside out.</p>
+      </div>
+      <div class="sign-card fu d2">
+        <div class="sign-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+        <h4>Uneven Canopy</h4>
+        <p>Heavy one-sided growth or V-shaped codominant stems create unbalanced load distribution and splitting risk.</p>
+      </div>
+      <div class="sign-card fu d3">
+        <div class="sign-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <h4>Dead or Dying Crown</h4>
+        <p>Dieback in the upper canopy, premature leaf drop, or bare branches out of season signal the tree is in serious decline.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="process-section">
+  <div class="wrap">
+    <div class="fu" style="text-align:center">
+      <p class="sec-label">How It Works</p>
+      <h2 class="sec-h2">Our Removal Process</h2>
+    </div>
+    <div class="process-steps">
+      <div class="process-step fu">
+        <div class="step-num">1</div>
+        <div class="step-title">Free Assessment</div>
+        <p class="step-desc">We visit your property, evaluate the tree, and provide a clear, no-pressure estimate with no hidden fees.</p>
+      </div>
+      <div class="process-step fu d1">
+        <div class="step-num">2</div>
+        <div class="step-title">Safety Planning</div>
+        <p class="step-desc">We plan the safest removal method, considering overhead lines, structures, and your landscaping.</p>
+      </div>
+      <div class="process-step fu d2">
+        <div class="step-num">3</div>
+        <div class="step-title">Professional Removal</div>
+        <p class="step-desc">Our crew uses precision cutting, rigging, and equipment to remove the tree safely and efficiently.</p>
+      </div>
+      <div class="process-step fu d3">
+        <div class="step-num">4</div>
+        <div class="step-title">Full Cleanup</div>
+        <p class="step-desc">We haul away all debris, chip the wood (and offer you free mulch), and leave your property clean.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="emergency-strip">
+  <div class="wrap">
+    <h3>Need Emergency Tree Removal?</h3>
+    <p>Storm damage, fallen trees, imminent hazards — we respond quickly when it matters most.</p>
+    <a href="tel:4088586123" class="btn" style="background:#fff;color:var(--gold-d);border-color:#fff">Call 408-858-6123 Now</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="ft-grid">
+      <div class="ft-brand"><img src="images/logo.png" alt="JC Tree Experts"><a href="tel:4088586123" class="ft-phone">408-858-6123</a><p class="ft-lic">CSLB #1057201 &nbsp;·&nbsp; ISA Arborist #WE-10110A</p><p>Family-owned Bay Area tree experts since 1986.</p>
+        <div class="ft-socials">
+          <a href="https://www.yelp.com/biz/jc-tree-experts-san-jose" target="_blank" class="ft-social"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.27 13.047l-2.05.624c-.592.18-.904.81-.703 1.4l1.22 3.595c.248.73 1.1.992 1.737.535l2.38-1.702c.565-.404.632-1.208.142-1.7z"/></svg></a>
+          <a href="https://www.instagram.com/jctreeexperts" target="_blank" class="ft-social"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://www.facebook.com/jctreeexperts" target="_blank" class="ft-social"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+        </div>
+      </div>
+      <div class="ft-col"><h4>Services</h4><ul class="ft-links"><li><a href="tree-removal.html">Tree Removal</a></li><li><a href="tree-services.html">Tree Pruning</a></li><li><a href="tree-services.html">Stump Grinding</a></li><li><a href="tree-services.html">Hedge Trimming</a></li></ul></div>
+      <div class="ft-col"><h4>Company</h4><ul class="ft-links"><li><a href="about.html">About Us</a></li><li><a href="limit-liability.html">Limit Your Liability</a></li><li><a href="free-mulch.html">Free Mulch</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="ft-col"><h4>Contact</h4><ul class="ft-links"><li><a href="tel:4088586123">408-858-6123</a></li><li><a href="mailto:Jctree1990@yahoo.com">Jctree1990@yahoo.com</a></li><li><a href="contact.html">Free Estimate</a></li></ul></div>
+    </div>
+    <div class="ft-bottom"><p>© 2024 JC Tree Experts Inc. All rights reserved.</p><p>CSLB #1057201 &nbsp;·&nbsp; Bay Area, CA</p></div>
+  </div>
+</footer>
+<script src="scripts.js"></script>
+</body>
+</html>
