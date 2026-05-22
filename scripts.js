@@ -95,24 +95,35 @@ if (form && fSuccess) {
     f.addEventListener('blur', () => validateField(f));
     f.addEventListener('input', () => { if (f.closest('.fg').classList.contains('err')) validateField(f); });
   });
-  form.addEventListener('submit', e => {
+  form.addEventListener('submit', async e => {
     e.preventDefault();
     const required = ['f-name','f-phone','f-email','f-svc'].map(id => document.getElementById(id)).filter(Boolean);
     const allOk = required.map(validateField).every(Boolean);
     if (!allOk) return;
-    const name  = document.getElementById('f-name')?.value.trim();
-    const phone = document.getElementById('f-phone')?.value.trim();
-    const email = document.getElementById('f-email')?.value.trim();
-    const svcEl = document.getElementById('f-svc');
-    const svc   = svcEl?.options[svcEl.selectedIndex]?.text;
-    const msg   = document.getElementById('f-msg')?.value.trim();
-    const subject = encodeURIComponent('Website Inquiry — ' + svc);
-    const body = encodeURIComponent(
-      'Name: ' + name + '\nPhone: ' + phone + '\nEmail: ' + email + '\nService: ' + svc +
-      (msg ? '\n\nMessage:\n' + msg : '')
-    );
-    window.location.href = 'mailto:Jctree1990@yahoo.com?subject=' + subject + '&body=' + body;
-    form.style.display = 'none';
-    fSuccess.classList.add('show');
+
+    const submitBtn = form.querySelector('.fsub');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+
+    try {
+      const data = new FormData(form);
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        form.style.display = 'none';
+        fSuccess.classList.add('show');
+      } else {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send My Request';
+        alert('Something went wrong. Please call us at 408-858-6123.');
+      }
+    } catch {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send My Request';
+      alert('Something went wrong. Please call us at 408-858-6123.');
+    }
   });
 }
