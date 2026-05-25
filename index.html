@@ -5,6 +5,81 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>JC Tree Experts | Bay Area Tree Service Since 1986</title>
 <meta name="description" content="JC Tree Experts — ISA Certified Arborists serving the Bay Area since 1986. Tree removal, pruning, stump grinding & more. Call 408-858-6123 for a free estimate.">
+<link rel="canonical" href="https://jctreeexperts.net/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jctreeexperts.net/">
+<meta property="og:title" content="JC Tree Experts | Bay Area Tree Service Since 1986">
+<meta property="og:description" content="ISA Certified Arborists serving the Bay Area since 1986. Tree removal, pruning, stump grinding & more. Call 408-858-6123 for a free estimate.">
+<meta property="og:image" content="https://jctreeexperts.net/images/tree-removal.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="JC Tree Experts | Bay Area Tree Service Since 1986">
+<meta name="twitter:description" content="ISA Certified Arborists serving the Bay Area since 1986. Free estimates. Call 408-858-6123.">
+<meta name="twitter:image" content="https://jctreeexperts.net/images/tree-removal.jpg">
+
+<!-- LocalBusiness + AggregateRating Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TreeService",
+  "name": "JC Tree Experts",
+  "url": "https://jctreeexperts.net",
+  "telephone": "+14088586123",
+  "email": "Jctree1990@yahoo.com",
+  "description": "ISA Certified Arborists serving the Bay Area since 1986. Tree removal, pruning, stump grinding, hazard removal, and more. Family-owned and fully licensed.",
+  "foundingDate": "1986",
+  "areaServed": [
+    "San Jose", "Campbell", "Los Gatos", "Sunnyvale", "Cupertino",
+    "Mountain View", "Palo Alto", "Santa Clara", "Milpitas", "Saratoga",
+    "Los Altos", "Menlo Park", "Redwood City", "Fremont", "Hayward"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "San Jose",
+    "addressRegion": "CA",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 37.3382,
+    "longitude": -121.8863
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "07:00",
+      "closes": "18:00"
+    }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "bestRating": "5",
+    "reviewCount": "1200"
+  },
+  "sameAs": [
+    "https://www.yelp.com/biz/jc-tree-experts-san-jose",
+    "https://www.instagram.com/jctreeexperts",
+    "https://www.facebook.com/jctreeexperts"
+  ],
+  "hasCredential": [
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "ISA Certified Arborist",
+      "recognizedBy": {"@type": "Organization", "name": "International Society of Arboriculture"},
+      "identifier": "WE-10110A"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "CSLB License",
+      "identifier": "#1057201"
+    }
+  ]
+}
+</script>
+
 <link rel="stylesheet" href="styles.css">
 <style>
 /* HOME-SPECIFIC */
@@ -71,6 +146,19 @@
 .mulch-tag{display:inline-block;background:var(--gold);color:#fff;font-size:.62rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:.32rem .875rem;margin-bottom:1.25rem}
 .mulch-h2{font-family:var(--serif);font-size:clamp(1.75rem,4vw,3rem);color:#fff;line-height:1.1;margin-bottom:1rem}
 .mulch-body{font-size:.975rem;color:rgba(255,255,255,.75);line-height:1.8;margin-bottom:1.75rem}
+
+/* REVIEWS CTA */
+#review-cta{background:var(--cream);padding:5rem 0;text-align:center;border-top:1px solid var(--cream2)}
+.review-cta-inner{max-width:600px;margin:0 auto}
+.review-cta-stars{display:flex;justify-content:center;gap:.3rem;font-size:1.75rem;color:var(--gold);margin-bottom:1rem}
+.review-cta-title{font-family:var(--serif);font-size:clamp(1.5rem,3vw,2.25rem);color:var(--dark);margin-bottom:.75rem}
+.review-cta-body{font-size:.95rem;color:var(--textm);line-height:1.75;margin-bottom:2rem}
+.review-platforms{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.review-btn-link{display:inline-flex;align-items:center;gap:.6rem;padding:.75rem 1.5rem;border-radius:2px;font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;transition:all .25s;border:2px solid transparent}
+.review-btn-google{background:#fff;color:#333;border-color:#e0e0e0;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+.review-btn-google:hover{box-shadow:0 4px 16px rgba(0,0,0,.15);transform:translateY(-2px)}
+.review-btn-yelp{background:#d32323;color:#fff}
+.review-btn-yelp:hover{background:#b51d1d;transform:translateY(-2px)}
 
 /* CONTACT CTA */
 #cta{background:var(--cream2);padding:5rem 0;text-align:center}
@@ -395,6 +483,27 @@
       <div class="fu d3" style="display:flex;gap:1rem;flex-wrap:wrap">
         <a href="free-mulch.html" class="btn btn-gold">Learn More</a>
         <a href="tel:4088586123" class="btn btn-outline">Call 408-858-6123</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEW CTA -->
+<section id="review-cta">
+  <div class="wrap">
+    <div class="review-cta-inner fu">
+      <div class="review-cta-stars">★★★★★</div>
+      <h2 class="review-cta-title">Happy With Our Work?</h2>
+      <p class="review-cta-body">Reviews help local families find trustworthy tree care. If we've served you well, a quick review on Google or Yelp makes a huge difference — it only takes 60 seconds.</p>
+      <div class="review-platforms">
+        <a href="https://g.page/r/jc-tree-experts/review" target="_blank" rel="noopener" class="review-btn-link review-btn-google">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+          Leave a Google Review
+        </a>
+        <a href="https://www.yelp.com/biz/jc-tree-experts-san-jose" target="_blank" rel="noopener" class="review-btn-link review-btn-yelp">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.27 13.047l-2.05.624c-.592.18-.904.81-.703 1.4l1.22 3.595c.248.73 1.1.992 1.737.535l2.38-1.702c.565-.404.632-1.208.142-1.7z"/></svg>
+          Review Us on Yelp
+        </a>
       </div>
     </div>
   </div>
