@@ -84,98 +84,657 @@
 
 <link rel="stylesheet" href="styles.css">
 <style>
-/* HOME-SPECIFIC */
-@keyframes heroZoom{from{transform:scale(1.1)}to{transform:scale(1)}}
-@keyframes scrollPulse{0%,100%{opacity:.4;transform:scaleY(1)}50%{opacity:.9;transform:scaleY(1.3)}}
-#hero{position:relative;height:100vh;min-height:680px;display:flex;align-items:center;overflow:hidden}
-.hero-bg{position:absolute;inset:-8%;background:url('images/tree-removal.jpg') center 30%/cover;animation:heroZoom 14s ease-out forwards}
-.hero-ov{position:absolute;inset:0;background:linear-gradient(170deg,rgba(28,26,21,.38) 0%,rgba(28,26,21,.58) 50%,rgba(28,26,21,.78) 100%)}
-.hero-c{position:relative;z-index:1;max-width:760px}
-.hero-eyebrow{display:inline-flex;align-items:center;gap:.75rem;font-size:.72rem;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--gold-l);margin-bottom:1.5rem;animation:fadeUp .8s .2s var(--ease) both}
-.hero-eyebrow::before,.hero-eyebrow::after{content:'';display:inline-block;width:28px;height:1px;background:var(--gold)}
-.hero-h1{font-family:var(--serif);font-size:clamp(2.4rem,5.5vw,4.4rem);color:#fff;line-height:1.1;margin-bottom:1.5rem;animation:fadeUp .8s .4s var(--ease) both}
-.hero-h1 em{font-style:italic;color:var(--gold-l)}
-.hero-sub{font-size:1.05rem;color:rgba(255,255,255,.82);line-height:1.7;margin-bottom:2.5rem;max-width:540px;animation:fadeUp .8s .6s var(--ease) both}
-.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3rem;animation:fadeUp .8s .8s var(--ease) both}
-.hero-badges{display:flex;gap:1.25rem;flex-wrap:wrap;animation:fadeUp .8s 1s var(--ease) both}
-.hbadge{display:flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(8px);padding:.5rem 1rem;border-radius:2px}
-.hbadge svg{width:14px;height:14px;color:var(--gold-l);flex-shrink:0}
-.hbadge span{font-size:.72rem;font-weight:500;letter-spacing:.05em;color:rgba(255,255,255,.9)}
-.scroll-ind{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;animation:fadeUp 1s 1.4s var(--ease) both;cursor:pointer}
-.scroll-ind span{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.45)}
-.scroll-line{width:1px;height:36px;background:linear-gradient(to bottom,transparent,rgba(255,255,255,.5));animation:scrollPulse 2s ease-in-out infinite}
+@keyframes heroZoom {
+  from { transform: scale(1.1) }
+  to { transform: scale(1) }
+}
 
-/* SERVICES GRID */
-#services{padding:6rem 0;background:var(--cream)}
-.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:3.5rem}
-.svc-card{background:#fff;overflow:hidden;transition:transform .4s var(--ease),box-shadow .4s var(--ease);position:relative}
-.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease);z-index:1}
-.svc-card:hover{transform:translateY(-8px);box-shadow:var(--sh-lg);z-index:2}
-.svc-card:hover::before{transform:scaleX(1)}
-.svc-img{height:220px;overflow:hidden}
-.svc-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
-.svc-card:hover .svc-img img{transform:scale(1.06)}
-.svc-body{padding:1.5rem 1.625rem 1.75rem}
-.svc-num{font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem}
-.svc-name{font-family:var(--serif);font-size:1.25rem;color:var(--dark);margin-bottom:.6rem;line-height:1.25}
-.svc-desc{font-size:.875rem;color:var(--textm);line-height:1.7;margin-bottom:1.1rem}
-.svc-link{display:inline-flex;align-items:center;gap:.45rem;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-d);transition:gap .2s}
-.svc-link svg{width:13px;height:13px;transition:transform .2s}
-.svc-link:hover{gap:.7rem}
-.svc-link:hover svg{transform:translateX(3px)}
+@keyframes scrollPulse {
+  0%, 100% { opacity: .4; transform: scaleY(1) }
+  50% { opacity: .9; transform: scaleY(1.3) }
+}
 
-/* ABOUT TEASER */
-#about-teaser{background:var(--dark);padding:6rem 0;position:relative;overflow:hidden}
-#about-teaser::before{content:'';position:absolute;top:-80px;right:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(45,106,45,.14) 0%,transparent 70%);pointer-events:none}
-.about-grid{display:grid;grid-template-columns:1fr 380px;gap:5rem;align-items:center}
-.about-pts{list-style:none;display:flex;flex-direction:column;gap:.8rem;margin:1.5rem 0 2rem}
-.about-pts li{display:flex;align-items:flex-start;gap:.875rem;font-size:.9rem;color:rgba(255,255,255,.72);line-height:1.6}
-.about-pts li::before{content:'';flex-shrink:0;width:18px;height:18px;margin-top:2px;border-radius:50%;background:var(--gold) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2.5'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") center/11px no-repeat}
-.isa-wrap{background:#fff;padding:2rem;border-radius:4px;text-align:center;box-shadow:0 24px 60px rgba(0,0,0,.3)}
-.isa-wrap img{width:130px;margin:0 auto}
-.isa-wrap p{margin-top:.75rem;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--textm)}
-.cred-strip{display:flex;margin-top:2px}
-.cred{flex:1;text-align:center;padding:1.1rem .5rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08)}
-.cred+.cred{border-left:none}
-.cred-v{font-family:var(--serif);font-size:1.25rem;color:var(--gold-l);line-height:1;margin-bottom:.2rem}
-.cred-k{font-size:.58rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.38)}
+#hero {
+  position: relative;
+  height: 100vh;
+  min-height: 680px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
 
-/* MULCH TEASER */
-#mulch-teaser{position:relative;min-height:440px;display:flex;align-items:center}
-.mulch-bg{position:absolute;inset:0;background:url('images/mulch.jpg') center/cover;background-attachment:fixed}
-.mulch-ov{position:absolute;inset:0;background:linear-gradient(135deg,rgba(28,20,10,.9) 0%,rgba(44,34,14,.84) 100%)}
-.mulch-c{position:relative;z-index:1;max-width:560px;padding:5rem 0}
-.mulch-tag{display:inline-block;background:var(--gold);color:#fff;font-size:.62rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:.32rem .875rem;margin-bottom:1.25rem}
-.mulch-h2{font-family:var(--serif);font-size:clamp(1.75rem,4vw,3rem);color:#fff;line-height:1.1;margin-bottom:1rem}
-.mulch-body{font-size:.975rem;color:rgba(255,255,255,.75);line-height:1.8;margin-bottom:1.75rem}
+.hero-bg {
+  position: absolute;
+  inset: -8%;
+  background: url('images/tree-removal.jpg') center 30% / cover;
+  animation: heroZoom 14s ease-out forwards;
+}
 
-/* REVIEWS CTA */
-#review-cta{background:var(--cream);padding:5rem 0;text-align:center;border-top:1px solid var(--cream2)}
-.review-cta-inner{max-width:600px;margin:0 auto}
-.review-cta-stars{display:flex;justify-content:center;gap:.3rem;font-size:1.75rem;color:var(--gold);margin-bottom:1rem}
-.review-cta-title{font-family:var(--serif);font-size:clamp(1.5rem,3vw,2.25rem);color:var(--dark);margin-bottom:.75rem}
-.review-cta-body{font-size:.95rem;color:var(--textm);line-height:1.75;margin-bottom:2rem}
-.review-platforms{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-.review-btn-link{display:inline-flex;align-items:center;gap:.6rem;padding:.75rem 1.5rem;border-radius:2px;font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;transition:all .25s;border:2px solid transparent}
-.review-btn-google{background:#fff;color:#333;border-color:#e0e0e0;box-shadow:0 2px 8px rgba(0,0,0,.1)}
-.review-btn-google:hover{box-shadow:0 4px 16px rgba(0,0,0,.15);transform:translateY(-2px)}
-.review-btn-yelp{background:#d32323;color:#fff}
-.review-btn-yelp:hover{background:#b51d1d;transform:translateY(-2px)}
+.hero-ov {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    170deg,
+    rgba(28, 26, 21, .38) 0%,
+    rgba(28, 26, 21, .58) 50%,
+    rgba(28, 26, 21, .78) 100%
+  );
+}
 
-/* CONTACT CTA */
-#cta{background:var(--cream2);padding:5rem 0;text-align:center}
-#cta h2{font-family:var(--serif);font-size:clamp(1.75rem,3.5vw,2.75rem);color:var(--dark);margin-bottom:1rem}
-#cta p{font-size:1rem;color:var(--textm);max-width:520px;margin:0 auto 2rem;line-height:1.75}
-.cta-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.hero-c {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+}
 
-@media(max-width:1024px){.about-grid{grid-template-columns:1fr;gap:3rem}}
-@media(max-width:768px){.svc-grid{grid-template-columns:1fr 1fr};.mulch-bg{background-attachment:scroll}}
-@media(max-width:540px){.svc-grid{grid-template-columns:1fr};.hero-ctas{flex-direction:column};.hero-ctas .btn{justify-content:center}}
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: .75rem;
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: var(--gold-l);
+  margin-bottom: 1.5rem;
+  animation: fadeUp .8s .2s var(--ease) both;
+}
+
+.hero-eyebrow::before,
+.hero-eyebrow::after {
+  content: '';
+  display: inline-block;
+  width: 28px;
+  height: 1px;
+  background: var(--gold);
+  flex-shrink: 0;
+}
+
+.hero-h1 {
+  font-family: var(--serif);
+  font-size: clamp(2.4rem, 5.5vw, 4.4rem);
+  color: #fff;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  animation: fadeUp .8s .4s var(--ease) both;
+}
+
+.hero-h1 em {
+  font-style: italic;
+  color: var(--gold-l);
+}
+
+.hero-sub {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, .82);
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+  max-width: 540px;
+  animation: fadeUp .8s .6s var(--ease) both;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+  animation: fadeUp .8s .8s var(--ease) both;
+}
+
+.hero-badges {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  animation: fadeUp .8s 1s var(--ease) both;
+}
+
+.hbadge {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  background: rgba(255, 255, 255, .09);
+  border: 1px solid rgba(255, 255, 255, .18);
+  backdrop-filter: blur(8px);
+  padding: .5rem 1rem;
+  border-radius: 2px;
+}
+
+.hbadge svg {
+  width: 14px;
+  height: 14px;
+  color: var(--gold-l);
+  flex-shrink: 0;
+}
+
+.hbadge span {
+  font-size: .72rem;
+  font-weight: 500;
+  letter-spacing: .05em;
+  color: rgba(255, 255, 255, .9);
+}
+
+.scroll-ind {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .5rem;
+  animation: fadeUp 1s 1.4s var(--ease) both;
+  cursor: pointer;
+}
+
+.scroll-ind span {
+  font-size: .6rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, .45);
+}
+
+.scroll-line {
+  width: 1px;
+  height: 36px;
+  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, .5));
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+#services {
+  padding: 6rem 0;
+  background: var(--cream);
+}
+
+.svc-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin-top: 3.5rem;
+}
+
+.svc-card {
+  background: #fff;
+  overflow: hidden;
+  transition: transform .4s var(--ease), box-shadow .4s var(--ease);
+  position: relative;
+}
+
+.svc-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .4s var(--ease);
+  z-index: 1;
+}
+
+.svc-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--sh-lg);
+  z-index: 2;
+}
+
+.svc-card:hover::before {
+  transform: scaleX(1);
+}
+
+.svc-card:hover img {
+  transform: scale(1.06);
+}
+
+.svc-body {
+  padding: 1.5rem 1.625rem 1.75rem;
+}
+
+.svc-num {
+  font-size: .62rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: .4rem;
+}
+
+.svc-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  font-size: .6rem;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--textm);
+  background: var(--cream2);
+  border: 1px solid #ddd;
+  padding: .22rem .6rem;
+  border-radius: 2px;
+  margin-bottom: .55rem;
+}
+
+.svc-tag::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+}
+
+.svc-name {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  color: var(--dark);
+  margin-bottom: .6rem;
+  line-height: 1.25;
+}
+
+.svc-desc {
+  font-size: .875rem;
+  color: var(--textm);
+  line-height: 1.7;
+  margin-bottom: 1.1rem;
+}
+
+.svc-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--gold-d);
+  transition: gap .2s;
+}
+
+.svc-link svg {
+  width: 13px;
+  height: 13px;
+  transition: transform .2s;
+}
+
+.svc-link:hover {
+  gap: .7rem;
+}
+
+.svc-link:hover svg {
+  transform: translateX(3px);
+}
+
+#about-teaser {
+  background: var(--dark);
+  padding: 6rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+#about-teaser::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 440px;
+  height: 440px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(45, 106, 45, .14) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 5rem;
+  align-items: center;
+}
+
+.about-side {
+  margin-top: 2rem;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-label {
+  color: var(--gold);
+}
+
+.about-title {
+  margin-top: 1rem;
+}
+
+.about-text {
+  color: rgba(255, 255, 255, .7);
+  line-height: 1.85;
+  margin-top: 1rem;
+}
+
+.about-cta {
+  margin-top: 2rem;
+  display: inline-block;
+}
+
+.about-pts {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+  margin: 1rem 0 2rem;
+}
+
+.about-pts li {
+  display: flex;
+  align-items: flex-start;
+  gap: .875rem;
+  font-size: .9rem;
+  color: rgba(255, 255, 255, .72);
+  line-height: 1.6;
+}
+
+.about-pts li::before {
+  content: '';
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  border-radius: 50%;
+  background: var(--gold) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2.5'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") center / 11px no-repeat;
+}
+
+.isa-wrap {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 4px;
+  text-align: center;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, .3);
+}
+
+.isa-wrap img {
+  width: 130px;
+  margin: 0 auto;
+}
+
+.isa-wrap p {
+  margin-top: .75rem;
+  font-size: .68rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--textm);
+}
+
+.cred-strip {
+  display: flex;
+  margin-top: 2px;
+}
+
+.cred {
+  flex: 1;
+  text-align: center;
+  padding: 1.1rem .5rem;
+  background: rgba(255, 255, 255, .05);
+  border: 1px solid rgba(255, 255, 255, .08);
+}
+
+.cred + .cred {
+  border-left: none;
+}
+
+.cred-v {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  color: var(--gold-l);
+  line-height: 1;
+  margin-bottom: .2rem;
+}
+
+.cred-k {
+  font-size: .58rem;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, .38);
+}
+
+#mulch-teaser {
+  position: relative;
+  min-height: 440px;
+  display: flex;
+  align-items: center;
+}
+
+.mulch-bg {
+  position: absolute;
+  inset: 0;
+  background: url('images/mulch.jpg') center / cover;
+  background-attachment: fixed;
+}
+
+.mulch-ov {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(28, 20, 10, .9) 0%,
+    rgba(44, 34, 14, .84) 100%
+  );
+}
+
+.mulch-c {
+  position: relative;
+  z-index: 1;
+  max-width: 560px;
+  padding: 5rem 0;
+}
+
+.mulch-tag {
+  display: inline-block;
+  background: var(--gold);
+  color: #fff;
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  padding: .32rem .875rem;
+  margin-bottom: 1.25rem;
+}
+
+.mulch-h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.75rem, 4vw, 3rem);
+  color: #fff;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.mulch-body {
+  font-size: .975rem;
+  color: rgba(255, 255, 255, .75);
+  line-height: 1.8;
+  margin-bottom: 1.75rem;
+}
+
+.mulch-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.75rem;
+}
+
+#review-cta {
+  background: var(--cream);
+  padding: 5rem 0;
+  text-align: center;
+  border-top: 1px solid var(--cream2);
+}
+
+.review-cta-inner {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.review-cta-stars {
+  display: flex;
+  justify-content: center;
+  gap: .3rem;
+  font-size: 1.75rem;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.review-cta-title {
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  color: var(--dark);
+  margin-bottom: .75rem;
+}
+
+.review-cta-body {
+  font-size: .95rem;
+  color: var(--textm);
+  line-height: 1.75;
+  margin-bottom: 2rem;
+}
+
+.review-platforms {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.review-btn-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  padding: .75rem 1.5rem;
+  border-radius: 2px;
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  transition: all .25s;
+  border: 2px solid transparent;
+}
+
+.review-btn-google {
+  background: #fff;
+  color: #333;
+  border-color: #e0e0e0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
+}
+
+.review-btn-google:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, .15);
+  transform: translateY(-2px);
+}
+
+.review-btn-yelp {
+  background: #d32323;
+  color: #fff;
+}
+
+.review-btn-yelp:hover {
+  background: #b51d1d;
+  transform: translateY(-2px);
+}
+
+#cta {
+  background: var(--cream2);
+  padding: 5rem 0;
+  text-align: center;
+}
+
+#cta h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+  color: var(--dark);
+  margin-bottom: 1rem;
+}
+
+#cta p {
+  font-size: 1rem;
+  color: var(--textm);
+  max-width: 520px;
+  margin: 0 auto 2rem;
+  line-height: 1.75;
+}
+
+.cta-body {
+  margin-top: 1rem;
+}
+
+.cta-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.yelp-text {
+  font-weight: 800;
+  font-size: 13px;
+  line-height: 1;
+  font-family: Arial, sans-serif;
+}
+
+.reviews-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.reviews-controls {
+  display: flex;
+  gap: .5rem;
+}
+
+.svc-card img {
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform .6s var(--ease);
+}
+
+@media (max-width: 1024px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .svc-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .mulch-bg {
+    background-attachment: scroll;
+  }
+}
+
+@media (max-width: 540px) {
+  .svc-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-ctas {
+    flex-direction: column;
+  }
+  .hero-ctas .btn {
+    justify-content: center;
+  }
+}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav id="nav">
   <div class="wrap">
     <div class="nav-inner">
@@ -184,24 +743,18 @@
         <div><div class="nav-logo-name">JC Tree Experts</div><span class="nav-logo-est">Est. 1986</span></div>
       </a>
       <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="tree-services.html">Tree Services</a></li>
-        <li><a href="tree-removal.html">Tree Removal</a></li>
-        <li><a href="limit-liability.html">Limit Your Liability</a></li>
-        <li><a href="free-mulch.html">Free Mulch</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="index.html">Home</a>
+        <li><a href="tree-services.html">Tree Services</a>
+        <li><a href="tree-removal.html">Tree Removal</a>
+        <li><a href="limit-liability.html">Limit Your Liability</a>
+        <li><a href="free-mulch.html">Free Mulch</a>
+        <li><a href="about.html">About</a>
+        <li><a href="contact.html">Contact</a>
       </ul>
       <div class="nav-socials">
-        <a href="https://www.yelp.com/biz/jc-tree-experts-san-jose" target="_blank" class="nav-social" title="Yelp">
-          <span style="font-weight:800;font-size:13px;line-height:1;font-family:Arial,sans-serif">y</span>
-        </a>
-        <a href="https://www.instagram.com/jctreeexperts" target="_blank" class="nav-social" title="Instagram">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor" stroke="none"/></svg>
-        </a>
-        <a href="https://www.facebook.com/jctreeexperts" target="_blank" class="nav-social" title="Facebook">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
-        </a>
+        <a href="https://www.yelp.com/biz/jc-tree-experts-san-jose" target="_blank" class="nav-social" title="Yelp"><span class="yelp-text">y</span></a>
+        <a href="https://www.instagram.com/jctreeexperts" target="_blank" class="nav-social" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://www.facebook.com/jctreeexperts" target="_blank" class="nav-social" title="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
       </div>
       <div class="nav-cta"><a href="contact.html" class="btn btn-gold">Free Quote</a></div>
       <button class="hbg" id="hbg" aria-label="Open menu"><span></span><span></span><span></span></button>
@@ -209,7 +762,6 @@
   </div>
 </nav>
 
-<!-- MOBILE MENU -->
 <div class="mob-menu" id="mobMenu">
   <a href="index.html" class="mob-link">Home</a>
   <a href="tree-services.html" class="mob-link">Tree Services</a>
@@ -220,13 +772,12 @@
   <a href="contact.html" class="mob-link">Contact</a>
   <a href="contact.html" class="btn btn-gold mob-link">Get a Free Quote</a>
   <div class="mob-socials">
-    <a href="https://www.yelp.com/biz/jc-tree-experts-san-jose" target="_blank" class="mob-social"><span style="font-weight:800;font-size:13px;line-height:1;font-family:Arial,sans-serif">y</span></a>
+    <a href="https://www.yelp.com/biz/jc-tree-experts-san-jose" target="_blank" class="mob-social"><span class="yelp-text">y</span></a>
     <a href="https://www.instagram.com/jctreeexperts" target="_blank" class="mob-social"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor" stroke="none"/></svg></a>
     <a href="https://www.facebook.com/jctreeexperts" target="_blank" class="mob-social"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
   </div>
 </div>
 
-<!-- HERO -->
 <section id="hero">
   <div class="hero-bg"></div>
   <div class="hero-ov"></div>
@@ -252,7 +803,6 @@
   </div>
 </section>
 
-<!-- STATS -->
 <div id="stats-bar">
   <div class="wrap">
     <div class="stats-row">
@@ -264,7 +814,6 @@
   </div>
 </div>
 
-<!-- SERVICES -->
 <section id="services">
   <div class="wrap">
     <div class="fu">
@@ -272,78 +821,83 @@
       <h2 class="sec-h2">Expert Tree Services<br>for Every Need</h2>
     </div>
     <div class="svc-grid">
-      <div class="svc-card fu">
-        <div class="svc-img"><img src="images/tree-removal.jpg" alt="Tree Removal" loading="lazy"></div>
+      <div class="svc-card">
+        <img src="images/tree-removal.jpg" alt="Tree Removal" loading="lazy">
         <div class="svc-body">
           <div class="svc-num">01</div>
+          <div class="svc-tag">Commercial &amp; Residential</div>
           <h3 class="svc-name">Tree Removal</h3>
           <p class="svc-desc">Safe, efficient removal of any tree — residential or commercial. We handle everything from felling to full cleanup.</p>
           <a href="tree-removal.html" class="svc-link">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
         </div>
       </div>
-      <div class="svc-card fu d1">
-        <div class="svc-img"><img src="images/hazard-removal.jpg" alt="Hazard Tree Removal" loading="lazy"></div>
+      <div class="svc-card">
+        <img src="images/hazard-removal.jpg" alt="Hazard Tree Removal" loading="lazy">
         <div class="svc-body">
           <div class="svc-num">02</div>
+          <div class="svc-tag">Commercial &amp; Residential</div>
           <h3 class="svc-name">Hazard Tree Removal</h3>
           <p class="svc-desc">Emergency response and proactive removal of trees posing danger to property, power lines, or safety.</p>
           <a href="tree-removal.html" class="svc-link">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
         </div>
       </div>
-      <div class="svc-card fu d2">
-        <div class="svc-img"><img src="images/tree-pruning.jpg" alt="Tree Pruning" loading="lazy"></div>
+      <div class="svc-card">
+        <img src="images/tree-pruning.jpg" alt="Tree Pruning" loading="lazy">
         <div class="svc-body">
           <div class="svc-num">03</div>
+          <div class="svc-tag">Commercial &amp; Residential</div>
           <h3 class="svc-name">Tree Pruning</h3>
           <p class="svc-desc">ISA-certified pruning techniques to improve structure, health, and aesthetics at any height.</p>
           <a href="tree-services.html" class="svc-link">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
         </div>
       </div>
-      <div class="svc-card fu d1">
-        <div class="svc-img"><img src="images/hedge-trimming.jpg" alt="Hedge Trimming" loading="lazy"></div>
+      <div class="svc-card">
+        <img src="images/hedge-trimming.jpg" alt="Hedge Trimming" loading="lazy">
         <div class="svc-body">
           <div class="svc-num">04</div>
+          <div class="svc-tag">Commercial &amp; Residential</div>
           <h3 class="svc-name">Hedge Trimming</h3>
           <p class="svc-desc">Precise trimming for clean, manicured results at any scale — from home gardens to commercial properties.</p>
           <a href="tree-services.html" class="svc-link">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
         </div>
       </div>
-      <div class="svc-card fu d2">
-        <div class="svc-img"><img src="images/stump-grinding.jpg" alt="Stump Grinding" loading="lazy"></div>
+      <div class="svc-card">
+        <img src="images/stump-grinding.jpg" alt="Stump Grinding" loading="lazy">
         <div class="svc-body">
           <div class="svc-num">05</div>
+          <div class="svc-tag">Commercial &amp; Residential</div>
           <h3 class="svc-name">Stump Grinding</h3>
           <p class="svc-desc">Complete removal below grade, eliminating hazards and reclaiming your yard space. Fast and clean.</p>
           <a href="tree-services.html" class="svc-link">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
         </div>
       </div>
-      <div class="svc-card fu d3">
-        <div class="svc-img"><img src="images/tree-care.jpg" alt="Tree Care" loading="lazy"></div>
+      <div class="svc-card">
+        <img src="images/tree-care.jpg" alt="Tree Care" loading="lazy">
         <div class="svc-body">
           <div class="svc-num">06</div>
-          <h3 class="svc-name">Tree Care &amp; Consulting</h3>
-          <p class="svc-desc">Expert assessments, disease diagnosis, and long-term maintenance plans to keep your trees thriving.</p>
-          <a href="tree-services.html" class="svc-link">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          <div class="svc-tag">Commercial &amp; Residential</div>
+          <h3 class="svc-name">Tree Removal</h3>
+          <p class="svc-desc">Safe, professional removal of any size tree — from tight residential yards to large commercial sites. Full cleanup included.</p>
+          <a href="tree-removal.html" class="svc-link">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- REVIEWS -->
 <section id="reviews">
   <div class="wrap">
-    <div class="fu" style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1rem">
+    <div class="reviews-header">
       <div>
         <p class="sec-label" style="color:var(--gold)">What Clients Say</p>
         <h2 class="sec-h2-light">Trusted by Hundreds<br>of Bay Area Families</h2>
       </div>
-      <div class="review-nav">
+      <div class="reviews-controls">
         <button class="review-btn" id="revPrev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg></button>
         <button class="review-btn" id="revNext"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></button>
       </div>
     </div>
-    <div class="reviews-track-wrap fu d1">
+    <div class="reviews-track-wrap">
       <div class="reviews-track">
 
         <div class="review-card">
@@ -442,23 +996,22 @@
   </div>
 </section>
 
-<!-- ABOUT TEASER -->
 <section id="about-teaser">
   <div class="wrap">
     <div class="about-grid">
-      <div>
-        <p class="sec-label fu" style="color:var(--gold)">Our Story</p>
-        <h2 class="sec-h2-light fu d1">Family-Owned &amp; Operated<br>Since 1986</h2>
-        <p class="fu d2" style="color:rgba(255,255,255,.7);line-height:1.85;margin-top:1rem">Founded by Javier Castaneda Sr. and now led alongside his son Javier Jr. — an ISA Certified Arborist — JC Tree Experts has served the South Bay with integrity for nearly four decades. We'll never pressure you into unnecessary services.</p>
-        <ul class="about-pts fu d2">
+      <div class="about-content">
+        <p class="sec-label about-label">Our Story</p>
+        <h2 class="sec-h2-light about-title">Family-Owned &amp; Operated<br>Since 1986</h2>
+        <p class="about-text">Founded by Javier Castaneda Sr. and now led alongside his son Javier Jr. — an ISA Certified Arborist — JC Tree Experts has served the South Bay with integrity for nearly four decades. We'll never pressure you into unnecessary services.</p>
+        <ul class="about-pts">
           <li>ISA Certified Arborist — Javier Castaneda Jr., #WE-10110A</li>
           <li>CSLB Licensed #1057201 — fully bonded &amp; insured</li>
           <li>Spikeless climbing methods to protect tree health</li>
           <li>Serving San Jose, Campbell, Los Gatos, Palo Alto &amp; beyond</li>
         </ul>
-        <a href="about.html" class="btn btn-ghost-gold fu d3">Our Full Story</a>
+        <a href="about.html" class="btn btn-ghost-gold about-cta">Our Full Story</a>
       </div>
-      <div class="fu d2">
+      <div class="about-side">
         <div class="isa-wrap">
           <img src="images/isa-logo.jpg" alt="ISA Certified Arborist">
           <p>ISA Certified Arborist</p>
@@ -473,16 +1026,15 @@
   </div>
 </section>
 
-<!-- FREE MULCH TEASER -->
 <section id="mulch-teaser">
   <div class="mulch-bg"></div>
   <div class="mulch-ov"></div>
   <div class="wrap">
     <div class="mulch-c">
-      <div class="mulch-tag fu">Free Service</div>
-      <h2 class="mulch-h2 fu d1">Free Mulch &amp;<br>Wood Chip Delivery</h2>
-      <p class="mulch-body fu d2">When we're chipping wood in your neighborhood, we offer free wood chips to local residents. Great for gardens, landscaping, and the environment.</p>
-      <div class="fu d3" style="display:flex;gap:1rem;flex-wrap:wrap">
+      <div class="mulch-tag">Free Service</div>
+      <h2 class="mulch-h2">Free Mulch &amp;<br>Wood Chip Delivery</h2>
+      <p class="mulch-body">When we're chipping wood in your neighborhood, we offer free wood chips to local residents. Great for gardens, landscaping, and the environment.</p>
+      <div class="mulch-actions">
         <a href="free-mulch.html" class="btn btn-gold">Learn More</a>
         <a href="tel:4088586123" class="btn btn-outline">Call 408-858-6123</a>
       </div>
@@ -490,10 +1042,9 @@
   </div>
 </section>
 
-<!-- REVIEW CTA -->
 <section id="review-cta">
   <div class="wrap">
-    <div class="review-cta-inner fu">
+    <div class="review-cta-inner">
       <div class="review-cta-stars">★★★★★</div>
       <h2 class="review-cta-title">Happy With Our Work?</h2>
       <p class="review-cta-body">Reviews help local families find trustworthy tree care. If we've served you well, a quick review on Google or Yelp makes a huge difference — it only takes 60 seconds.</p>
@@ -511,19 +1062,17 @@
   </div>
 </section>
 
-<!-- CTA -->
 <section id="cta">
   <div class="wrap">
-    <h2 class="fu">Ready to Get Started?</h2>
-    <p class="fu d1">Contact us today for a free, no-obligation estimate. Honest pricing, professional results.</p>
-    <div class="cta-actions fu d2">
+    <h2>Ready to Get Started?</h2>
+    <p class="cta-body">Contact us today for a free, no-obligation estimate. Honest pricing, professional results.</p>
+    <div class="cta-actions">
       <a href="contact.html" class="btn btn-gold">Get a Free Quote</a>
       <a href="tel:4088586123" class="btn btn-outline-dark">Call 408-858-6123</a>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="wrap">
     <div class="ft-grid">
@@ -533,7 +1082,7 @@
         <p class="ft-lic">CSLB #1057201 &nbsp;·&nbsp; ISA Arborist #WE-10110A</p>
         <p>Family-owned Bay Area tree experts since 1986. Licensed, bonded, and insured.</p>
         <div class="ft-socials">
-          <a href="https://www.yelp.com/biz/jc-tree-experts-san-jose" target="_blank" class="ft-social" title="Yelp"><span style="font-weight:800;font-size:13px;line-height:1;font-family:Arial,sans-serif">y</span></a>
+          <a href="https://www.yelp.com/biz/jc-tree-experts-san-jose" target="_blank" class="ft-social" title="Yelp"><span class="yelp-text">y</span></a>
           <a href="https://www.instagram.com/jctreeexperts" target="_blank" class="ft-social" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor" stroke="none"/></svg></a>
           <a href="https://www.facebook.com/jctreeexperts" target="_blank" class="ft-social" title="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
         </div>
