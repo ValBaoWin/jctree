@@ -110,20 +110,21 @@ if (contactForm && successMessage) {
     const submitBtn = contactForm.querySelector('.fsub');
     submitBtn.disabled = true;
     submitBtn.textContent = 'Sending…';
+    const resetButton = () => {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send My Request';
+      alert('Something went wrong. Please call us at 408-858-6123.');
+    };
     try {
       const res = await fetch(contactForm.action, {method:'POST', body:new FormData(contactForm), headers:{'Accept':'application/json'}});
       if (res.ok) {
         contactForm.style.display = 'none';
         successMessage.classList.add('show');
       } else {
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Send My Request';
-        alert('Something went wrong. Please call us at 408-858-6123.');
+        resetButton();
       }
     } catch {
-      submitBtn.disabled = false;
-      submitBtn.textContent = 'Send My Request';
-      alert('Something went wrong. Please call us at 408-858-6123.');
+      resetButton();
     }
   });
 }
