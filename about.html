@@ -22,6 +22,11 @@
 .yelp-text{font-weight:800;font-size:13px;line-height:1;font-family:Arial,sans-serif}
 .about-story{padding:5rem 0;background:var(--cream)}
 .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.story-quote{font-style:italic;color:var(--gold-d);border-left:3px solid var(--gold);padding-left:1.25rem;margin-top:1.5rem}
+.story-imgs{margin-top:1.5rem}
+.story-imgs-main{width:100%;border-radius:4px;box-shadow:var(--sh-lg);margin-bottom:1rem}
+.story-imgs-pair{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.story-imgs-pair img{width:100%;height:140px;object-fit:cover;border-radius:4px}
 .about-team{background:var(--dark);padding:5rem 0;position:relative;overflow:hidden}
 .about-team::before{content:'';position:absolute;top:-60px;right:-60px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(45,106,45,.14) 0%,transparent 70%);pointer-events:none}
 .about-team .sec-label{color:var(--gold)}
@@ -52,11 +57,6 @@
 .nature-eyebrow{font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:rgba(190,215,150,.9);margin-bottom:1.25rem}
 .nature-h2{font-family:var(--serif);font-size:clamp(1.75rem,3.5vw,2.6rem);color:#fff;line-height:1.2;margin-bottom:1.25rem}
 .nature-body{font-size:1rem;color:rgba(255,255,255,.76);line-height:1.85;margin-bottom:2rem}
-.story-quote{font-style:italic;color:var(--gold-d);border-left:3px solid var(--gold);padding-left:1.25rem;margin-top:1.5rem}
-.story-imgs{margin-top:1.5rem}
-.story-imgs-main{width:100%;border-radius:4px;box-shadow:var(--sh-lg);margin-bottom:1rem}
-.story-imgs-pair{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.story-imgs-pair img{width:100%;height:140px;object-fit:cover;border-radius:4px}
 @media(max-width:900px){.story-grid{grid-template-columns:1fr;gap:3rem}.team-grid{grid-template-columns:1fr;gap:2rem}.isa-grid{grid-template-columns:1fr}.values-grid{grid-template-columns:1fr 1fr}.isa-badge-big{max-width:280px}.nature-bg{background-attachment:scroll}}
 @media(max-width:540px){.values-grid{grid-template-columns:1fr}}
 </style>
@@ -64,9 +64,8 @@
 <body>
 
 <nav id="nav">
-  <div class="wrap">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="JC Tree Experts"><div><div class="nav-logo-name">JC Tree Experts</div><span class="nav-logo-est">Est. 1986</span></div></a>
+  <div class="wrap nav-inner">
+    <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="JC Tree Experts"><div><div class="nav-logo-name">JC Tree Experts</div><span class="nav-logo-est">Est. 1986</span></div></a>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="tree-services.html">Tree Services</a></li>
@@ -82,8 +81,7 @@
         <a href="https://www.facebook.com/jctreeexperts" target="_blank" class="nav-social"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
       </div>
       <div class="nav-cta"><a href="contact.html" class="btn btn-gold">Free Quote</a></div>
-      <button class="hbg" id="hbg" aria-label="Open menu"><span></span><span></span><span></span></button>
-    </div>
+    <button class="hbg" id="hbg" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
@@ -107,30 +105,26 @@
   <div class="page-hero-bg" style="background-image:url('images/giving-back.jpg');background-position:center 35%"></div>
   <div class="page-hero-ov"></div>
   <div class="wrap page-hero-c">
-    <div class="page-hero-label">Family-Owned Since 1986</div>
+    <p class="page-hero-label">Family-Owned Since 1986</p>
     <h1>About JC Tree Experts</h1>
   </div>
 </div>
 
 <section class="about-story">
-  <div class="wrap">
-    <div class="story-grid">
-      <div class="prose fu">
-        <p class="sec-label">Our Story</p>
-        <h2 class="sec-h2">Nearly Four Decades<br>of Honest Work</h2>
-        <p>JC Tree Experts was founded in San Jose in 1986 by Javier Castaneda Sr. and his wife. What started as a small, local tree service has grown into one of the South Bay's most trusted names in professional arboriculture — built entirely on word-of-mouth, honest pricing, and quality work.</p>
-        <p>Today, Javier Sr. runs the business alongside his son, Javier Castaneda Jr., who serves as Field Operations Manager and holds ISA Certified Arborist credentials. Together, they lead a team that shares the same values the company was founded on: integrity, craftsmanship, and care for the community.</p>
-        <p>We serve a 30-mile radius around San Jose, covering the entire South Bay Area. We work with homeowners, HOAs, commercial property managers, and municipalities.</p>
-        <p class="story-quote">"We'll never pressure or scare you into unnecessary services. Our goal is to give you an honest evaluation and the best solution for your trees."</p>
-      </div>
-      <div class="fu d2">
-        <div class="story-imgs">
-          <img src="images/tree-care.jpg" alt="JC Tree Experts team at work" class="story-imgs-main">
-          <div class="story-imgs-pair">
-            <img src="images/tree-removal.jpg" alt="Tree removal">
-            <img src="images/stump-grinding.jpg" alt="Stump grinding">
-          </div>
-        </div>
+  <div class="wrap story-grid">
+    <div class="prose fu">
+      <p class="sec-label">Our Story</p>
+      <h2 class="sec-h2">Nearly Four Decades<br>of Honest Work</h2>
+      <p>JC Tree Experts was founded in San Jose in 1986 by Javier Castaneda Sr. and his wife. What started as a small, local tree service has grown into one of the South Bay's most trusted names in professional arboriculture — built entirely on word-of-mouth, honest pricing, and quality work.</p>
+      <p>Today, Javier Sr. runs the business alongside his son, Javier Castaneda Jr., who serves as Field Operations Manager and holds ISA Certified Arborist credentials. Together, they lead a team that shares the same values the company was founded on: integrity, craftsmanship, and care for the community.</p>
+      <p>We serve a 30-mile radius around San Jose, covering the entire South Bay Area. We work with homeowners, HOAs, commercial property managers, and municipalities.</p>
+      <p class="story-quote">"We'll never pressure or scare you into unnecessary services. Our goal is to give you an honest evaluation and the best solution for your trees."</p>
+    </div>
+    <div class="fu d2 story-imgs">
+      <img src="images/javier-family.jpg" alt="Javier Sr. and Javier Jr. with the 72HD+ Arbor Pro" class="story-imgs-main">
+      <div class="story-imgs-pair">
+        <img src="images/tree-removal.jpg" alt="Tree removal">
+        <img src="images/stump-grinding.jpg" alt="Stump grinding">
       </div>
     </div>
   </div>
