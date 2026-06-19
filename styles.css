@@ -119,8 +119,8 @@ footer{background:var(--dark);padding:3.5rem 0 2rem;border-top:1px solid rgba(25
 .reviews-track{display:flex;gap:1.5rem;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-ms-overflow-style:none;padding-bottom:.5rem;cursor:grab}
 .reviews-track::-webkit-scrollbar{display:none}
 .reviews-track.grabbing{cursor:grabbing}
-.review-card{flex:0 0 340px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:4px;padding:2rem;scroll-snap-align:start;transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
-.review-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.3)}
+.review-card{flex:0 0 340px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:4px;padding:2rem;scroll-snap-align:start;transition:transform .3s var(--ease),box-shadow .3s var(--ease),border-color .3s;display:block;cursor:pointer}
+.review-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.3);border-color:rgba(255,255,255,.2)}
 .review-stars{display:flex;gap:3px;margin-bottom:1rem;color:var(--gold-l);font-size:1rem;letter-spacing:1px}
 .review-text{font-size:.9rem;color:rgba(255,255,255,.75);line-height:1.75;margin-bottom:1.25rem;font-style:italic}
 .review-text::before{content:'\201C';font-size:1.5rem;color:var(--gold);line-height:0;vertical-align:-.25em;margin-right:.2rem}
