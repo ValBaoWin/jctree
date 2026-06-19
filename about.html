@@ -19,46 +19,296 @@
 <meta name="twitter:image" content="https://jctreeexperts.net/images/tree-care.jpg">
 <link rel="stylesheet" href="styles.css">
 <style>
-.yelp-text{font-weight:800;font-size:13px;line-height:1;font-family:Arial,sans-serif}
-.about-story{padding:5rem 0;background:var(--cream)}
-.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
-.story-quote{font-style:italic;color:var(--gold-d);border-left:3px solid var(--gold);padding-left:1.25rem;margin-top:1.5rem}
-.story-imgs{margin-top:1.5rem}
-.story-imgs-main{width:100%;border-radius:4px;box-shadow:var(--sh-lg);margin-bottom:1rem}
-.story-imgs-pair{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.story-imgs-pair img{width:100%;height:140px;object-fit:cover;border-radius:4px}
-.about-team{background:var(--dark);padding:5rem 0;position:relative;overflow:hidden}
-.about-team::before{content:'';position:absolute;top:-60px;right:-60px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(45,106,45,.14) 0%,transparent 70%);pointer-events:none}
-.about-team .sec-label{color:var(--gold)}
-.team-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:3rem}
-.team-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:4px;padding:2.5rem;position:relative;overflow:hidden}
-.team-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold)}
-.team-role{font-size:.68rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-l);margin-bottom:.5rem}
-.team-name{font-family:var(--serif);font-size:1.6rem;color:#fff;margin-bottom:1rem}
-.team-bio{font-size:.9rem;color:rgba(255,255,255,.68);line-height:1.8}
-.isa-section{padding:5rem 0;background:var(--cream2)}
-.isa-grid{display:grid;grid-template-columns:280px 1fr;gap:4rem;align-items:center}
-.isa-badge-big{background:#fff;padding:2.5rem;border-radius:4px;text-align:center;box-shadow:var(--sh-lg)}
-.isa-badge-big img{width:160px;margin:0 auto}
-.isa-badge-big p{margin-top:1rem;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--textm)}
-.values-section{padding:5rem 0;background:var(--dark)}
-.values-section .sec-label{color:var(--gold)}
-.values-header{text-align:center}
-.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:2.5rem}
-.value-card{padding:2rem;border:1px solid rgba(255,255,255,.08);border-radius:4px;transition:all .3s var(--ease)}
-.value-card:hover{background:rgba(140,138,62,.08);border-color:rgba(140,138,62,.3);transform:translateY(-3px)}
-.value-icon{font-size:1.75rem;margin-bottom:1rem}
-.value-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold-l);margin-bottom:.625rem}
-.value-desc{font-size:.875rem;color:rgba(255,255,255,.62);line-height:1.75}
-.nature-section{position:relative;min-height:400px;display:flex;align-items:center;padding:5rem 0}
-.nature-bg{position:absolute;inset:0;background:url('images/bird.jpg') center/cover;background-attachment:fixed}
-.nature-ov{position:absolute;inset:0;background:rgba(8,20,8,.78)}
-.nature-c{position:relative;z-index:1;max-width:600px}
-.nature-eyebrow{font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:rgba(190,215,150,.9);margin-bottom:1.25rem}
-.nature-h2{font-family:var(--serif);font-size:clamp(1.75rem,3.5vw,2.6rem);color:#fff;line-height:1.2;margin-bottom:1.25rem}
-.nature-body{font-size:1rem;color:rgba(255,255,255,.76);line-height:1.85;margin-bottom:2rem}
-@media(max-width:900px){.story-grid{grid-template-columns:1fr;gap:3rem}.team-grid{grid-template-columns:1fr;gap:2rem}.isa-grid{grid-template-columns:1fr}.values-grid{grid-template-columns:1fr 1fr}.isa-badge-big{max-width:280px}.nature-bg{background-attachment:scroll}}
-@media(max-width:540px){.values-grid{grid-template-columns:1fr}}
+.yelp-text {
+  font-weight: 800;
+  font-size: 13px;
+  line-height: 1;
+  font-family: Arial, sans-serif;
+}
+
+.about-story {
+  padding: 5rem 0;
+  background: var(--cream);
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.story-quote {
+  font-style: italic;
+  color: var(--gold-d);
+  border-left: 3px solid var(--gold);
+  padding-left: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.story-imgs {
+  margin-top: 1.5rem;
+}
+
+.story-imgs-main {
+  width: 100%;
+  border-radius: 4px;
+  box-shadow: var(--sh-lg);
+  margin-bottom: 1rem;
+}
+
+.story-imgs-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.story-imgs-pair img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.about-team {
+  background: var(--dark);
+  padding: 5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-team::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(45, 106, 45, .14) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.about-team .sec-label {
+  color: var(--gold);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+.team-card {
+  background: rgba(255, 255, 255, .04);
+  border: 1px solid rgba(255, 255, 255, .08);
+  border-radius: 4px;
+  padding: 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.team-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gold);
+}
+
+.team-role {
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--gold-l);
+  margin-bottom: .5rem;
+}
+
+.team-name {
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.team-bio {
+  font-size: .9rem;
+  color: rgba(255, 255, 255, .68);
+  line-height: 1.8;
+}
+
+.isa-section {
+  padding: 5rem 0;
+  background: var(--cream2);
+}
+
+.isa-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.isa-badge-big {
+  background: #fff;
+  padding: 2.5rem;
+  border-radius: 4px;
+  text-align: center;
+  box-shadow: var(--sh-lg);
+}
+
+.isa-badge-big img {
+  width: 160px;
+  margin: 0 auto;
+}
+
+.isa-badge-big p {
+  margin-top: 1rem;
+  font-size: .7rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--textm);
+}
+
+.values-section {
+  padding: 5rem 0;
+  background: var(--dark);
+}
+
+.values-section .sec-label {
+  color: var(--gold);
+}
+
+.values-header {
+  text-align: center;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.value-card {
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, .08);
+  border-radius: 4px;
+  transition: all .3s var(--ease);
+}
+
+.value-card:hover {
+  background: rgba(140, 138, 62, .08);
+  border-color: rgba(140, 138, 62, .3);
+  transform: translateY(-3px);
+}
+
+.value-icon {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.value-title {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  color: var(--gold-l);
+  margin-bottom: .625rem;
+}
+
+.value-desc {
+  font-size: .875rem;
+  color: rgba(255, 255, 255, .62);
+  line-height: 1.75;
+}
+
+.nature-section {
+  position: relative;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  padding: 5rem 0;
+}
+
+.nature-bg {
+  position: absolute;
+  inset: 0;
+  background: url('images/bird.jpg') center / cover;
+  background-attachment: fixed;
+}
+
+.nature-ov {
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 20, 8, .78);
+}
+
+.nature-c {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+}
+
+.nature-eyebrow {
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: rgba(190, 215, 150, .9);
+  margin-bottom: 1.25rem;
+}
+
+.nature-h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.75rem, 3.5vw, 2.6rem);
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 1.25rem;
+}
+
+.nature-body {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, .76);
+  line-height: 1.85;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 900px) {
+  .story-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .isa-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .isa-badge-big {
+    max-width: 280px;
+  }
+
+  .nature-bg {
+    background-attachment: scroll;
+  }
+}
+
+@media (max-width: 540px) {
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+}
 </style>
 </head>
 <body>
@@ -124,7 +374,7 @@
       <img src="images/javier-family.jpg" alt="Javier Sr. and Javier Jr. with the 72HD+ Arbor Pro" class="story-imgs-main">
       <div class="story-imgs-pair">
         <img src="images/tree-removal.jpg" alt="Tree removal">
-        <img src="images/stump-grinding.jpg" alt="Stump grinding">
+        <img src="images/stump-grinding.jpg" alt="Stump grinding" style="object-fit:contain;background:#1c1a15">
       </div>
     </div>
   </div>
