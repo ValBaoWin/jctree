@@ -162,6 +162,7 @@ footer{background:var(--dark);padding:3.5rem 0 2rem;border-top:1px solid rgba(25
 .stat-l{font-size:.63rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.45)}
 
 /* ── STICKY MOBILE CTA BAR ── */
+.mobile-cta-bar{display:none}
 
 /* ── RESPONSIVE ── */
 @media(max-width:1024px){
