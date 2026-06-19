@@ -118,12 +118,7 @@
 .hero-ov {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    170deg,
-    rgba(28, 26, 21, .38) 0%,
-    rgba(28, 26, 21, .58) 50%,
-    rgba(28, 26, 21, .78) 100%
-  );
+  background: linear-gradient(170deg, rgba(28, 26, 21, .38), rgba(28, 26, 21, .58) 50%, rgba(28, 26, 21, .78));
 }
 
 .hero-c {
@@ -153,6 +148,7 @@
   height: 1px;
   background: var(--gold);
   flex-shrink: 0;
+  flex: 0 0 28px;
 }
 
 .hero-h1 {
@@ -208,7 +204,7 @@
   width: 14px;
   height: 14px;
   color: var(--gold-l);
-  flex-shrink: 0;
+  flex: 0 0 14px;
 }
 
 .hbadge span {
@@ -267,9 +263,7 @@
 .svc-card::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+  inset: 0 0 auto 0;
   height: 3px;
   background: var(--gold);
   transform: scaleX(0);
@@ -327,6 +321,7 @@
   border-radius: 50%;
   background: var(--gold);
   flex-shrink: 0;
+  flex: 0 0 5px;
 }
 
 .svc-name {
@@ -360,6 +355,7 @@
   width: 13px;
   height: 13px;
   transition: transform .2s;
+  flex: 0 0 13px;
 }
 
 .svc-link:hover {
@@ -385,7 +381,7 @@
   width: 440px;
   height: 440px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(45, 106, 45, .14) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(45, 106, 45, .14), transparent 70%);
   pointer-events: none;
 }
 
@@ -443,7 +439,7 @@
 
 .about-pts li::before {
   content: '';
-  flex-shrink: 0;
+  flex: 0 0 18px;
   width: 18px;
   height: 18px;
   margin-top: 2px;
@@ -521,11 +517,7 @@
 .mulch-ov {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(28, 20, 10, .9) 0%,
-    rgba(44, 34, 14, .84) 100%
-  );
+  background: linear-gradient(135deg, rgba(28, 20, 10, .9), rgba(44, 34, 14, .84));
 }
 
 .mulch-c {
@@ -632,13 +624,20 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
 }
 
-.review-btn-google:hover { box-shadow: 0 4px 16px rgba(0,0,0,.15); }
+.review-btn-google:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, .15);
+  transform: translateY(-2px);
+}
 
-.review-btn-yelp { background: #d32323; color: #fff; }
-.review-btn-yelp:hover { background: #b51d1d; }
+.review-btn-yelp {
+  background: #d32323;
+  color: #fff;
+}
 
-.review-btn-google:hover,
-.review-btn-yelp:hover { transform: translateY(-2px); }
+.review-btn-yelp:hover {
+  background: #b51d1d;
+  transform: translateY(-2px);
+}
 
 #cta {
   background: var(--cream2);
@@ -694,6 +693,10 @@
   gap: .5rem;
 }
 
+.sec-label-gold {
+  color: var(--gold) !important;
+}
+
 .svc-card img {
   display: block;
   width: 100%;
@@ -741,17 +744,17 @@
         <div><div class="nav-logo-name">JC Tree Experts</div><span class="nav-logo-est">Est. 1986</span></div>
       </a>
       <ul class="nav-links">
-        <li><a href="index.html">Home</a>
-        <li><a href="tree-services.html">Tree Services</a>
-        <li><a href="tree-removal.html">Tree Removal</a>
-        <li><a href="limit-liability.html">Limit Your Liability</a>
-        <li><a href="free-mulch.html">Free Mulch</a>
-        <li><a href="about.html">About</a>
-        <li><a href="contact.html">Contact</a>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tree-services.html">Tree Services</a></li>
+        <li><a href="tree-removal.html">Tree Removal</a></li>
+        <li><a href="limit-liability.html">Limit Your Liability</a></li>
+        <li><a href="free-mulch.html">Free Mulch</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
       <div class="nav-socials">
         <a href="https://www.yelp.com/biz/jc-tree-experts-san-jose" target="_blank" class="nav-social" title="Yelp"><span class="yelp-text">y</span></a>
-        <a href="https://www.instagram.com/jctreeexperts" target="_blank" class="nav-social" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://www.instagram.com/jctreeexperts" target="_blank" class="nav-social" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor" stroke="none"/></svg></a>
         <a href="https://www.facebook.com/jctreeexperts" target="_blank" class="nav-social" title="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
       </div>
       <div class="nav-cta"><a href="contact.html" class="btn btn-gold">Free Quote</a></div>
@@ -820,13 +823,13 @@
     </div>
     <div class="svc-grid">
       <div class="svc-card">
-        <img src="images/tree-removal.jpg" alt="Tree Removal" loading="lazy">
+        <img src="images/tree-care.jpg" alt="Tree Services" loading="lazy">
         <div class="svc-body">
           <div class="svc-num">01</div>
           <div class="svc-tag">Commercial &amp; Residential</div>
-          <h3 class="svc-name">Tree Removal</h3>
-          <p class="svc-desc">Safe, efficient removal of any tree — residential or commercial. We handle everything from felling to full cleanup.</p>
-          <a href="tree-removal.html" class="svc-link">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          <h3 class="svc-name">Tree Services</h3>
+          <p class="svc-desc">Pruning, stump grinding, hedge trimming, and tree care consulting by ISA Certified Arborists. Full-service tree care.</p>
+          <a href="tree-services.html" class="svc-link">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
         </div>
       </div>
       <div class="svc-card">
@@ -860,7 +863,7 @@
         </div>
       </div>
       <div class="svc-card">
-        <img src="images/stump-grinding.jpg" alt="Stump Grinding" loading="lazy">
+        <img src="images/stump-grinding.jpg" alt="Stump Grinding" loading="lazy" style="object-position:center top">
         <div class="svc-body">
           <div class="svc-num">05</div>
           <div class="svc-tag">Commercial &amp; Residential</div>
@@ -887,7 +890,7 @@
   <div class="wrap">
     <div class="reviews-header">
       <div>
-        <p class="sec-label" style="color:var(--gold)">What Clients Say</p>
+        <p class="sec-label sec-label-gold">What Clients Say</p>
         <h2 class="sec-h2-light">Trusted by Hundreds<br>of Bay Area Families</h2>
       </div>
       <div class="reviews-controls">
