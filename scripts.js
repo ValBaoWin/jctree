@@ -75,6 +75,26 @@ document.querySelectorAll('.faq-q').forEach(question => {
   });
 });
 
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+    'send_to': 'AW-649319874/Wh7ACLPB8fAaEMKrz7UC',
+    'event_callback': callback
+  });
+  return false;
+}
+
+document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    gtag_report_conversion(this.href);
+  });
+});
+
 const contactForm = document.getElementById('cform');
 const successMessage = document.getElementById('fSuccess');
 if (contactForm && successMessage) {
