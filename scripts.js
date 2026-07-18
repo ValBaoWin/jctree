@@ -62,54 +62,19 @@ if (reviewsTrack) {
     if (!isDragging) return; e.preventDefault();
     reviewsTrack.scrollLeft = scrollLeft - (e.pageX - reviewsTrack.offsetLeft - startX) * 1.5;
   });
-  document.getElementById('revPrev')?.addEventListener('click', () => reviewsTrack.scrollBy({left:-360, behavior:'smooth'}));
-  document.getElementById('revNext')?.addEventListener('click', () => reviewsTrack.scrollBy({left:360, behavior:'smooth'}));
-}
+  document.getElementById('revPrev')?.addEventListener('click', () => { advance(-1); resetTimer(); });
+  document.getElementById('revNext')?.addEventListener('click', () => { advance(1); resetTimer(); });
 
-// Hero reviews auto-advance
-const heroRevItems = document.querySelectorAll('#heroRevViewport .hero-rev-item');
-const heroRevBar = document.getElementById('heroRevBar');
-const heroRevCount = document.getElementById('heroRevCount');
-if (heroRevItems.length && heroRevBar) {
-  let current = 0;
-  let timeoutId;
-  const DURATION = 5000;
-
-  function goTo(idx) {
-    heroRevItems[current].classList.remove('active');
-    current = ((idx % heroRevItems.length) + heroRevItems.length) % heroRevItems.length;
-    heroRevItems[current].classList.add('active');
-    if (heroRevCount) heroRevCount.textContent = (current + 1) + ' / ' + heroRevItems.length;
-    resetBar();
-    scheduleNext();
+  function advance(dir) {
+    const max = reviewsTrack.scrollWidth - reviewsTrack.clientWidth;
+    const next = reviewsTrack.scrollLeft + dir * 364;
+    reviewsTrack.scrollTo({ left: next <= 0 ? max : next >= max ? 0 : next, behavior: 'smooth' });
   }
 
-  function resetBar() {
-    heroRevBar.style.transition = 'none';
-    heroRevBar.style.width = '0%';
-    requestAnimationFrame(() => requestAnimationFrame(() => {
-      heroRevBar.style.transition = 'width ' + DURATION + 'ms linear';
-      heroRevBar.style.width = '100%';
-    }));
-  }
-
-  function scheduleNext() {
-    clearTimeout(timeoutId);
-    timeoutId = setTimeout(() => goTo(current + 1), DURATION);
-  }
-
-  document.getElementById('heroRevPrev')?.addEventListener('click', () => goTo(current - 1));
-  document.getElementById('heroRevNext')?.addEventListener('click', () => goTo(current + 1));
-
-  const panel = document.querySelector('.hero-rev-panel');
-  panel?.addEventListener('mouseenter', () => {
-    clearTimeout(timeoutId);
-    heroRevBar.style.transition = 'none';
-  });
-  panel?.addEventListener('mouseleave', () => { resetBar(); scheduleNext(); });
-
-  resetBar();
-  scheduleNext();
+  let autoTimer = setInterval(() => advance(1), 5000);
+  function resetTimer() { clearInterval(autoTimer); autoTimer = setInterval(() => advance(1), 5000); }
+  reviewsTrack.addEventListener('mouseenter', () => clearInterval(autoTimer));
+  reviewsTrack.addEventListener('mouseleave', () => { autoTimer = setInterval(() => advance(1), 5000); });
 }
 
 document.querySelectorAll('.faq-q').forEach(question => {

@@ -104,11 +104,10 @@
 
 #hero {
   position: relative;
-  min-height: 100vh;
+  height: 100vh;
+  min-height: 680px;
   display: flex;
-  align-items: flex-start;
-  padding-top: 7.5rem;
-  padding-bottom: 5rem;
+  align-items: center;
   overflow: hidden;
 }
 
@@ -703,6 +702,73 @@
   gap: .5rem;
 }
 
+.reviews-rating-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  padding: 1.5rem;
+  background: var(--cream2);
+  border-radius: 2px;
+}
+
+.reviews-rating-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.reviews-rating-score {
+  font-family: var(--serif);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+.reviews-rating-detail {
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+}
+
+.reviews-rating-stars {
+  font-size: .95rem;
+  color: var(--gold);
+}
+
+.reviews-rating-count {
+  font-size: .75rem;
+  color: var(--textm);
+}
+
+.reviews-write-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  padding: .75rem 1.5rem;
+  background: var(--gold);
+  color: #fff;
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  transition: all .25s;
+  text-decoration: none;
+}
+
+.reviews-write-btn:hover {
+  background: var(--gold-d);
+  transform: translateY(-2px);
+}
+
+.reviews-write-btn svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
 @media (max-width: 1024px) {
   .about-grid {
     grid-template-columns: 1fr;
@@ -716,6 +782,11 @@
   }
   .mulch-bg {
     background-attachment: scroll;
+  }
+  .reviews-rating-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
   }
 }
 
@@ -731,146 +802,6 @@
   }
 }
 
-.hero-reviews-strip {
-  margin-top: 2.5rem;
-  animation: fadeUp 0.8s 1.2s var(--ease) both;
-}
-
-.hero-rev-panel {
-  background: rgba(10,9,7,.68);
-  backdrop-filter: blur(18px);
-  border: 1px solid rgba(255,255,255,.1);
-  border-top-color: rgba(255,255,255,.18);
-  border-radius: 4px;
-  padding: 1.25rem 1.5rem 1rem;
-}
-
-.hero-rev-viewport {
-  position: relative;
-  min-height: 92px;
-}
-
-.hero-rev-item {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-  opacity: 0;
-  transition: opacity .55s ease;
-  pointer-events: none;
-}
-
-.hero-rev-item.active {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.hero-rev-avatar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 42px;
-  height: 42px;
-  flex-shrink: 0;
-  border-radius: 50%;
-  background: var(--gold);
-  color: var(--dark);
-  font-weight: 700;
-  font-size: .78rem;
-}
-
-.hero-rev-body {
-  flex: 1;
-  min-width: 0;
-}
-
-.hero-rev-stars {
-  margin-bottom: .2rem;
-  color: var(--gold);
-  font-size: .8rem;
-  letter-spacing: .04em;
-}
-
-.hero-rev-text {
-  margin-bottom: .3rem;
-  color: rgba(255,255,255,.88);
-  font-size: .88rem;
-  line-height: 1.5;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.hero-rev-byline {
-  font-size: .73rem;
-  color: rgba(255,255,255,.45);
-}
-
-.hero-rev-byline strong {
-  margin-right: .35rem;
-  color: var(--gold-l);
-  font-weight: 600;
-}
-
-.hero-rev-footer {
-  display: flex;
-  align-items: center;
-  gap: .75rem;
-  margin-top: .75rem;
-  padding-top: .65rem;
-  border-top: 1px solid rgba(255,255,255,.07);
-}
-
-.hero-rev-progress {
-  flex: 1;
-  height: 2px;
-  background: rgba(255,255,255,.1);
-  border-radius: 1px;
-  overflow: hidden;
-}
-
-.hero-rev-bar {
-  width: 0%;
-  height: 100%;
-  background: var(--gold);
-  border-radius: 1px;
-}
-
-.hero-rev-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 26px;
-  height: 26px;
-  flex-shrink: 0;
-  background: none;
-  border: 1px solid rgba(255,255,255,.15);
-  border-radius: 2px;
-  color: rgba(255,255,255,.55);
-  cursor: pointer;
-  transition: border-color .2s, color .2s;
-}
-
-.hero-rev-btn:hover {
-  border-color: var(--gold);
-  color: var(--gold);
-}
-
-.hero-rev-count {
-  font-size: .7rem;
-  color: rgba(255,255,255,.3);
-  white-space: nowrap;
-}
-@media (max-width: 600px) {
-  .hero-reviews-strip {
-    margin-top: 1.5rem;
-  }
-  .hero-rev-avatar {
-    display: none;
-  }
-}
 </style>
 </head>
 <body>
@@ -933,156 +864,6 @@
         <a href="contact.html" class="btn btn-gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>Get a Free Quote</a>
         <a href="tel:4088586123" class="btn btn-outline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 010 2.19 2 2 0 012.1 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>Call 408-858-6123</a>
       </div>
-      <div class="hero-reviews-strip">
-    <div class="hero-rev-panel">
-      <div class="hero-rev-viewport" id="heroRevViewport">
-
-        <div class="hero-rev-item active">
-          <div class="hero-rev-avatar">JR</div>
-          <div class="hero-rev-body">
-            <div class="hero-rev-stars">★★★★★</div>
-            <p class="hero-rev-text">Javier and his crew removed a massive oak leaning over our house. Professional, efficient, and the cleanup was spotless. Best tree service in the Bay Area.</p>
-            <div class="hero-rev-byline"><strong>John R.</strong> San Jose, CA &nbsp;·&nbsp; Google</div>
-          </div>
-        </div>
-
-        <div class="hero-rev-item">
-          <div class="hero-rev-avatar">ML</div>
-          <div class="hero-rev-body">
-            <div class="hero-rev-stars">★★★★★</div>
-            <p class="hero-rev-text">Been using JC Tree Experts for 3 years. Always on time, fair pricing, and they clearly know trees. The ISA certification really shows in their work.</p>
-            <div class="hero-rev-byline"><strong>Maria L.</strong> Campbell, CA &nbsp;·&nbsp; Yelp</div>
-          </div>
-        </div>
-
-        <div class="hero-rev-item">
-          <div class="hero-rev-avatar">TW</div>
-          <div class="hero-rev-body">
-            <div class="hero-rev-stars">★★★★★</div>
-            <p class="hero-rev-text">Emergency call on a Saturday after a storm knocked a tree onto our fence. They responded fast, cleared everything, and the price was very fair. Incredible service.</p>
-            <div class="hero-rev-byline"><strong>Tom &amp; Karen W.</strong> Los Gatos, CA &nbsp;·&nbsp; Google</div>
-          </div>
-        </div>
-
-        <div class="hero-rev-item">
-          <div class="hero-rev-avatar">SK</div>
-          <div class="hero-rev-body">
-            <div class="hero-rev-stars">★★★★★</div>
-            <p class="hero-rev-text">Javier Jr. came out and was incredibly honest — told us which trees needed work and which were fine. No upselling at all. That kind of integrity is rare.</p>
-            <div class="hero-rev-byline"><strong>Sandra K.</strong> Sunnyvale, CA &nbsp;·&nbsp; Google</div>
-          </div>
-        </div>
-
-        <div class="hero-rev-item">
-          <div class="hero-rev-avatar">DP</div>
-          <div class="hero-rev-body">
-            <div class="hero-rev-stars">★★★★★</div>
-            <p class="hero-rev-text">Got free mulch delivery — a whole truck load for our garden beds. And then they came back for our tree removal. Honest, hardworking people. Highly recommend.</p>
-            <div class="hero-rev-byline"><strong>David P.</strong> Cupertino, CA &nbsp;·&nbsp; Yelp</div>
-          </div>
-        </div>
-
-        <div class="hero-rev-item">
-          <div class="hero-rev-avatar">RG</div>
-          <div class="hero-rev-body">
-            <div class="hero-rev-stars">★★★★★</div>
-            <p class="hero-rev-text">Javier's team trimmed our massive redwood and cleaned up every last branch. Polite, fast, and left our yard looking better than before. Definitely calling them again.</p>
-            <div class="hero-rev-byline"><strong>Rachel G.</strong> Saratoga, CA &nbsp;·&nbsp; Google</div>
-          </div>
-        </div>
-
-        <div class="hero-rev-item">
-          <div class="hero-rev-avatar">KR</div>
-          <div class="hero-rev-body">
-            <div class="hero-rev-stars">★★★★★</div>
-            <p class="hero-rev-text">Called JC Tree Experts after another company quoted me triple the price. Javier came out, gave me an honest number, and the job was perfect. Don't bother calling anyone else.</p>
-            <div class="hero-rev-byline"><strong>Kevin R.</strong> Campbell, CA &nbsp;·&nbsp; Google</div>
-          </div>
-        </div>
-
-        <div class="hero-rev-item">
-          <div class="hero-rev-avatar">GN</div>
-          <div class="hero-rev-body">
-            <div class="hero-rev-stars">★★★★★</div>
-            <p class="hero-rev-text">Javier and his son worked non-stop all day removing a complicated tree near our pool and left the yard spotless. Could not have asked for a better team.</p>
-            <div class="hero-rev-byline"><strong>Greg N.</strong> Sunnyvale, CA &nbsp;·&nbsp; Google</div>
-          </div>
-        </div>
-
-        <div class="hero-rev-item">
-          <div class="hero-rev-avatar">PD</div>
-          <div class="hero-rev-body">
-            <div class="hero-rev-stars">★★★★★</div>
-            <p class="hero-rev-text">JC Tree Experts is by far the most knowledgeable company I've hired. Javier Sr. knew exactly what was wrong with our oak and how to save it. Outstanding.</p>
-            <div class="hero-rev-byline"><strong>Paul D.</strong> Willow Glen, CA &nbsp;·&nbsp; Google</div>
-          </div>
-        </div>
-
-        <div class="hero-rev-item">
-          <div class="hero-rev-avatar">AR</div>
-          <div class="hero-rev-body">
-            <div class="hero-rev-stars">★★★★★</div>
-            <p class="hero-rev-text">A branch cracked during a windstorm and was hanging over our car. JC Tree Experts came out within hours and solved it safely. Truly emergency-ready.</p>
-            <div class="hero-rev-byline"><strong>Alex R.</strong> Mountain View, CA &nbsp;·&nbsp; Google</div>
-          </div>
-        </div>
-
-        <div class="hero-rev-item">
-          <div class="hero-rev-avatar">OB</div>
-          <div class="hero-rev-body">
-            <div class="hero-rev-stars">★★★★★</div>
-            <p class="hero-rev-text">Javier has been taking care of our trees for six years now. Every visit is consistent — professional, thorough, and reasonably priced. He's part of the family at this point.</p>
-            <div class="hero-rev-byline"><strong>Oscar B.</strong> Willow Glen, CA &nbsp;·&nbsp; Google</div>
-          </div>
-        </div>
-
-        <div class="hero-rev-item">
-          <div class="hero-rev-avatar">RH</div>
-          <div class="hero-rev-body">
-            <div class="hero-rev-stars">★★★★★</div>
-            <p class="hero-rev-text">Fastest response time I've ever seen from a tree service. Called at 8am, crew was here by 10am. Huge palm removed and cleaned up by noon. Absolutely incredible.</p>
-            <div class="hero-rev-byline"><strong>Roberto H.</strong> East San Jose, CA &nbsp;·&nbsp; Google</div>
-          </div>
-        </div>
-
-        <div class="hero-rev-item">
-          <div class="hero-rev-avatar">IR</div>
-          <div class="hero-rev-body">
-            <div class="hero-rev-stars">★★★★★</div>
-            <p class="hero-rev-text">I called five companies. JC Tree Experts was the only one that came out to inspect before quoting. That level of professionalism told me everything. Hired them on the spot.</p>
-            <div class="hero-rev-byline"><strong>Isabel R.</strong> Cupertino, CA &nbsp;·&nbsp; Google</div>
-          </div>
-        </div>
-
-        <div class="hero-rev-item">
-          <div class="hero-rev-avatar">FC</div>
-          <div class="hero-rev-body">
-            <div class="hero-rev-stars">★★★★★</div>
-            <p class="hero-rev-text">Their crew pruned our entire orchard — apples, plums, pears — and the difference in the harvest this year was unbelievable. These guys truly know fruit trees.</p>
-            <div class="hero-rev-byline"><strong>Frank C.</strong> Gilroy, CA &nbsp;·&nbsp; Google</div>
-          </div>
-        </div>
-
-        <div class="hero-rev-item">
-          <div class="hero-rev-avatar">CM</div>
-          <div class="hero-rev-body">
-            <div class="hero-rev-stars">★★★★★</div>
-            <p class="hero-rev-text">I'm a landscaper and I refer all my clients to JC Tree Experts when the job is beyond my scope. Every single one has come back thanking me. That says everything.</p>
-            <div class="hero-rev-byline"><strong>Carlos M.</strong> San Jose, CA &nbsp;·&nbsp; Yelp</div>
-          </div>
-        </div>
-
-      </div>
-      <div class="hero-rev-footer">
-        <button class="hero-rev-btn" id="heroRevPrev" aria-label="Previous review">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="11" height="11"><polyline points="15 18 9 12 15 6"/></svg>
-        </button>
-        <div class="hero-rev-progress"><div class="hero-rev-bar" id="heroRevBar"></div></div>
-        <button class="hero-rev-btn" id="heroRevNext" aria-label="Next review">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="11" height="11"><polyline points="9 18 15 12 9 6"/></svg>
-        </button>
-        <span class="hero-rev-count" id="heroRevCount">1 / 15</span>
-      </div>
     </div>
   </div>
 
@@ -1093,10 +874,23 @@
 
 <section id="reviews">
   <div class="wrap">
+    <div class="reviews-rating-bar">
+      <div class="reviews-rating-left">
+        <div class="reviews-rating-score">5.0</div>
+        <div class="reviews-rating-detail">
+          <div class="reviews-rating-stars">★★★★★</div>
+          <div class="reviews-rating-count">180+ Google &amp; Yelp Reviews</div>
+        </div>
+      </div>
+      <a class="reviews-write-btn" href="https://www.google.com/maps/place/?q=place_id:ChIJXwSa_1AtjoARbuw0krxmwlQ" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+        Write a Review
+      </a>
+    </div>
     <div class="reviews-header">
       <div>
         <p class="sec-label sec-label-gold">What Clients Say</p>
-        <h2 class="sec-h2-light">Trusted by Hundreds<br>of Bay Area Families</h2>
+        <h2 class="sec-h2" style="color:var(--dark)">Trusted by Hundreds<br>of Bay Area Families</h2>
       </div>
       <div class="reviews-controls">
         <button class="review-btn" id="revPrev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg></button>
