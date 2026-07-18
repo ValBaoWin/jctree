@@ -66,6 +66,52 @@ if (reviewsTrack) {
   document.getElementById('revNext')?.addEventListener('click', () => reviewsTrack.scrollBy({left:360, behavior:'smooth'}));
 }
 
+// Hero reviews auto-advance
+const heroRevItems = document.querySelectorAll('#heroRevViewport .hero-rev-item');
+const heroRevBar = document.getElementById('heroRevBar');
+const heroRevCount = document.getElementById('heroRevCount');
+if (heroRevItems.length && heroRevBar) {
+  let current = 0;
+  let timeoutId;
+  const DURATION = 5000;
+
+  function goTo(idx) {
+    heroRevItems[current].classList.remove('active');
+    current = ((idx % heroRevItems.length) + heroRevItems.length) % heroRevItems.length;
+    heroRevItems[current].classList.add('active');
+    if (heroRevCount) heroRevCount.textContent = (current + 1) + ' / ' + heroRevItems.length;
+    resetBar();
+    scheduleNext();
+  }
+
+  function resetBar() {
+    heroRevBar.style.transition = 'none';
+    heroRevBar.style.width = '0%';
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      heroRevBar.style.transition = 'width ' + DURATION + 'ms linear';
+      heroRevBar.style.width = '100%';
+    }));
+  }
+
+  function scheduleNext() {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => goTo(current + 1), DURATION);
+  }
+
+  document.getElementById('heroRevPrev')?.addEventListener('click', () => goTo(current - 1));
+  document.getElementById('heroRevNext')?.addEventListener('click', () => goTo(current + 1));
+
+  const panel = document.querySelector('.hero-rev-panel');
+  panel?.addEventListener('mouseenter', () => {
+    clearTimeout(timeoutId);
+    heroRevBar.style.transition = 'none';
+  });
+  panel?.addEventListener('mouseleave', () => { resetBar(); scheduleNext(); });
+
+  resetBar();
+  scheduleNext();
+}
+
 document.querySelectorAll('.faq-q').forEach(question => {
   question.addEventListener('click', () => {
     const item = question.closest('.faq-item');
