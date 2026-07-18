@@ -3,21 +3,16 @@
 <head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-649319874"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'AW-649319874');
-</script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-9QSV6HJD65"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
+  gtag('config', 'AW-649319874');
   gtag('config', 'G-9QSV6HJD65');
 </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>JC Tree Experts | Bay Area Tree Service Since 1986</title>
 <meta name="description" content="JC Tree Experts — ISA Certified Arborists serving the Bay Area since 1986. Tree removal, pruning, stump grinding & more. Call 408-858-6123 for a free estimate.">
 <link rel="canonical" href="https://jctreeexperts.net/">
@@ -151,12 +146,9 @@
 .hero-eyebrow::before,
 .hero-eyebrow::after {
   content: '';
-  display: inline-block;
   width: 28px;
   height: 1px;
   background: var(--gold);
-  flex-shrink: 0;
-  flex: 0 0 28px;
 }
 
 .hero-h1 {
@@ -166,11 +158,6 @@
   line-height: 1.1;
   margin-bottom: 1.5rem;
   animation: fadeUp .8s .4s var(--ease) both;
-}
-
-.hero-h1 em {
-  font-style: italic;
-  color: var(--gold-l);
 }
 
 .hero-sub {
@@ -212,7 +199,7 @@
   width: 14px;
   height: 14px;
   color: var(--gold-l);
-  flex: 0 0 14px;
+  flex-shrink: 0;
 }
 
 .hbadge span {
@@ -329,7 +316,6 @@
   border-radius: 50%;
   background: var(--gold);
   flex-shrink: 0;
-  flex: 0 0 5px;
 }
 
 .svc-name {
@@ -362,8 +348,8 @@
 .svc-link svg {
   width: 13px;
   height: 13px;
+  flex-shrink: 0;
   transition: transform .2s;
-  flex: 0 0 13px;
 }
 
 .svc-link:hover {
@@ -372,6 +358,14 @@
 
 .svc-link:hover svg {
   transform: translateX(3px);
+}
+
+.svc-card img {
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform .6s var(--ease);
 }
 
 #about-teaser {
@@ -401,7 +395,9 @@
 }
 
 .about-side {
-  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .about-content {
@@ -447,12 +443,12 @@
 
 .about-pts li::before {
   content: '';
-  flex: 0 0 18px;
   width: 18px;
   height: 18px;
   margin-top: 2px;
   border-radius: 50%;
   background: var(--gold) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2.5'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") center / 11px no-repeat;
+  flex-shrink: 0;
 }
 
 .isa-wrap {
@@ -478,7 +474,6 @@
 
 .cred-strip {
   display: flex;
-  margin-top: 2px;
 }
 
 .cred {
@@ -621,8 +616,8 @@
   font-weight: 700;
   letter-spacing: .08em;
   text-transform: uppercase;
-  transition: all .25s;
   border: 2px solid transparent;
+  transition: all .25s;
 }
 
 .review-btn-google {
@@ -633,8 +628,8 @@
 }
 
 .review-btn-google:hover {
-  box-shadow: 0 4px 16px rgba(0, 0, 0, .15);
   transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, .15);
 }
 
 .review-btn-yelp {
@@ -705,14 +700,6 @@
   color: var(--gold) !important;
 }
 
-.svc-card img {
-  display: block;
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  transition: transform .6s var(--ease);
-}
-
 @media (max-width: 1024px) {
   .about-grid {
     grid-template-columns: 1fr;
@@ -749,7 +736,10 @@
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
         <img src="images/logo.png" alt="JC Tree Experts">
-        <div><div class="nav-logo-name">JC Tree Experts</div><span class="nav-logo-est">Est. 1986</span></div>
+        <div class="nav-logo-text">
+          <div class="nav-logo-name">JC Tree Experts</div>
+          <span class="nav-logo-est">Est. 1986</span>
+        </div>
       </a>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
@@ -793,22 +783,465 @@
   <div class="wrap">
     <div class="hero-c">
       <div class="hero-eyebrow">Bay Area Tree Experts</div>
-      <h1 class="hero-h1">Honest Work.<br><em>Lasting Impact.</em><br>Local Trust.</h1>
+      <h1 class="hero-h1">JC Tree Experts</h1>
       <p class="hero-sub">ISA Certified Arborists serving the Bay Area since 1986. Family-owned, fully licensed, and committed to the health of every tree we touch.</p>
       <div class="hero-ctas">
         <a href="contact.html" class="btn btn-gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>Get a Free Quote</a>
         <a href="tel:4088586123" class="btn btn-outline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 010 2.19 2 2 0 012.1 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>Call 408-858-6123</a>
       </div>
-      <div class="hero-badges">
-        <div class="hbadge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span>ISA Certified</span></div>
-        <div class="hbadge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>Est. 1986</span></div>
-        <div class="hbadge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg><span>Licensed &amp; Insured</span></div>
-        <div class="hbadge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Free Estimates</span></div>
-      </div>
     </div>
   </div>
   <div class="scroll-ind" onclick="document.getElementById('stats-bar').scrollIntoView({behavior:'smooth'})">
     <span>Scroll</span><div class="scroll-line"></div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="wrap">
+    <div class="reviews-header">
+      <div>
+        <p class="sec-label sec-label-gold">What Clients Say</p>
+        <h2 class="sec-h2-light">Trusted by Hundreds<br>of Bay Area Families</h2>
+      </div>
+      <div class="reviews-controls">
+        <button class="review-btn" id="revPrev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg></button>
+        <button class="review-btn" id="revNext"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></button>
+      </div>
+    </div>
+    <div class="reviews-track-wrap">
+      <div class="reviews-track">
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Javier and his crew removed a massive oak that was leaning over our house. Professional, efficient, and the cleanup was spotless. Best tree service in the Bay Area.</p>
+          <div class="review-author">
+            <div class="review-initials">JR</div>
+            <div class="review-details">
+              <div class="review-name">John R.</div>
+              <div class="review-meta">San Jose, CA</div>
+              <a class="review-source google" href="https://www.google.com/maps/place/?q=place_id:ChIJXwSa_1AtjoARbuw0krxmwlQ" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor"><path d="M12 11v2h2.93c-.26 1.19-1.29 2-2.93 2a3 3 0 110-6c.78 0 1.48.29 2.01.77l1.42-1.42A5 5 0 107 12h5z"/></svg> Google</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Been using JC Tree Experts for 3 years for all our pruning needs. Always on time, fair pricing, and they clearly know trees. The ISA certification really shows in their work.</p>
+          <div class="review-author">
+            <div class="review-initials">ML</div>
+            <div class="review-details">
+              <div class="review-name">Maria L.</div>
+              <div class="review-meta">Campbell, CA</div>
+              <a class="review-source yelp" href="https://www.yelp.com/biz/jc-tree-experts-san-jose" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor"><path d="M12.27 13.047l-2.05.624c-.592.18-.904.81-.703 1.4l1.22 3.595c.248.73 1.1.992 1.737.535l2.38-1.702c.565-.404.632-1.208.142-1.7z"/></svg> Yelp</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Emergency call on a Saturday after a storm knocked a tree onto our fence. They responded fast, cleared everything, and the price was very fair. Incredible service.</p>
+          <div class="review-author">
+            <div class="review-initials">TW</div>
+            <div>
+              <div class="review-name">Tom &amp; Karen W.</div>
+              <div class="review-meta">Los Gatos, CA</div>
+              <a class="review-source google" href="https://www.google.com/maps/place/?q=place_id:ChIJXwSa_1AtjoARbuw0krxmwlQ" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor"><path d="M12 11v2h2.93c-.26 1.19-1.29 2-2.93 2a3 3 0 110-6c.78 0 1.48.29 2.01.77l1.42-1.42A5 5 0 107 12h5z"/></svg> Google</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Got free mulch delivery — a whole truck load for our garden beds. And then they came back for our tree removal. Honest, hardworking people. Highly recommend.</p>
+          <div class="review-author">
+            <div class="review-initials">DP</div>
+            <div>
+              <div class="review-name">David P.</div>
+              <div class="review-meta">Cupertino, CA</div>
+              <a class="review-source yelp" href="https://www.yelp.com/biz/jc-tree-experts-san-jose" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor"><path d="M12.27 13.047l-2.05.624c-.592.18-.904.81-.703 1.4l1.22 3.595c.248.73 1.1.992 1.737.535l2.38-1.702c.565-.404.632-1.208.142-1.7z"/></svg> Yelp</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Javier Jr. came out for a free estimate and was incredibly honest. He told us which trees needed work and which were fine — no upselling at all. That kind of integrity is rare.</p>
+          <div class="review-author">
+            <div class="review-initials">SK</div>
+            <div>
+              <div class="review-name">Sandra K.</div>
+              <div class="review-meta">Sunnyvale, CA</div>
+              <a class="review-source google" href="https://www.google.com/maps/place/?q=place_id:ChIJXwSa_1AtjoARbuw0krxmwlQ" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor"><path d="M12 11v2h2.93c-.26 1.19-1.29 2-2.93 2a3 3 0 110-6c.78 0 1.48.29 2.01.77l1.42-1.42A5 5 0 107 12h5z"/></svg> Google</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Top-notch stump grinding. Fast, clean, very reasonable price. The crew was courteous and professional. Third time using JC Tree Experts and will keep coming back.</p>
+          <div class="review-author">
+            <div class="review-initials">MC</div>
+            <div>
+              <div class="review-name">Mike C.</div>
+              <div class="review-meta">Santa Clara, CA</div>
+              <a class="review-source yelp" href="https://www.yelp.com/biz/jc-tree-experts-san-jose" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor"><path d="M12.27 13.047l-2.05.624c-.592.18-.904.81-.703 1.4l1.22 3.595c.248.73 1.1.992 1.737.535l2.38-1.702c.565-.404.632-1.208.142-1.7z"/></svg> Yelp</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Handled removal of three large trees on our commercial property with minimal disruption to our business. Great communication, spotless cleanup. Very impressed.</p>
+          <div class="review-author">
+            <div class="review-initials">AH</div>
+            <div>
+              <div class="review-name">Amy H.</div>
+              <div class="review-meta">Palo Alto, CA</div>
+              <a class="review-source google" href="https://www.google.com/maps/place/?q=place_id:ChIJXwSa_1AtjoARbuw0krxmwlQ" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor"><path d="M12 11v2h2.93c-.26 1.19-1.29 2-2.93 2a3 3 0 110-6c.78 0 1.48.29 2.01.77l1.42-1.42A5 5 0 107 12h5z"/></svg> Google</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Javier's team trimmed our massive redwood and cleaned up every last branch. They were polite, fast, and left our yard looking better than before. Definitely calling them again.</p>
+          <div class="review-author">
+            <div class="review-initials">RG</div>
+            <div>
+              <div class="review-name">Rachel G.</div>
+              <div class="review-meta">Saratoga, CA</div>
+              <a class="review-source google" href="https://www.google.com/maps/place/?q=place_id:ChIJXwSa_1AtjoARbuw0krxmwlQ" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor"><path d="M12 11v2h2.93c-.26 1.19-1.29 2-2.93 2a3 3 0 110-6c.78 0 1.48.29 2.01.77l1.42-1.42A5 5 0 107 12h5z"/></svg> Google</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Had two dying eucalyptus trees dangerously close to my roof. JC Tree Experts assessed them same day and had both down by noon the next morning. Absolutely phenomenal service.</p>
+          <div class="review-author">
+            <div class="review-initials">BT</div>
+            <div>
+              <div class="review-name">Brian T.</div>
+              <div class="review-meta">San Jose, CA</div>
+              <a class="review-source yelp" href="https://www.yelp.com/biz/jc-tree-experts-san-jose" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor"><path d="M12.27 13.047l-2.05.624c-.592.18-.904.81-.703 1.4l1.22 3.595c.248.73 1.1.992 1.737.535l2.38-1.702c.565-.404.632-1.208.142-1.7z"/></svg> Yelp</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">We had a huge pine that was root-lifting our driveway. Javier explained every option, gave us a fair price, and the removal was done cleanly in one day. Very professional crew.</p>
+          <div class="review-author">
+            <div class="review-initials">LF</div>
+            <div>
+              <div class="review-name">Linda F.</div>
+              <div class="review-meta">Los Gatos, CA</div>
+              <a class="review-source google" href="https://www.google.com/maps/place/?q=place_id:ChIJXwSa_1AtjoARbuw0krxmwlQ" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor"><path d="M12 11v2h2.93c-.26 1.19-1.29 2-2.93 2a3 3 0 110-6c.78 0 1.48.29 2.01.77l1.42-1.42A5 5 0 107 12h5z"/></svg> Google</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">The free mulch delivery alone is worth calling these guys. I got two truckloads for my vegetable garden and they were so friendly about dropping it exactly where I needed it.</p>
+          <div class="review-author">
+            <div class="review-initials">CE</div>
+            <div>
+              <div class="review-name">Carol E.</div>
+              <div class="review-meta">Morgan Hill, CA</div>
+              <a class="review-source yelp" href="https://www.yelp.com/biz/jc-tree-experts-san-jose" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor"><path d="M12.27 13.047l-2.05.624c-.592.18-.904.81-.703 1.4l1.22 3.595c.248.73 1.1.992 1.737.535l2.38-1.702c.565-.404.632-1.208.142-1.7z"/></svg> Yelp</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">I've hired a lot of tree companies over the years. JC Tree Experts is by far the most knowledgeable. Javier Sr. knew exactly what was wrong with our oak and how to save it. Outstanding.</p>
+          <div class="review-author">
+            <div class="review-initials">PD</div>
+            <div>
+              <div class="review-name">Paul D.</div>
+              <div class="review-meta">Willow Glen, CA</div>
+              <a class="review-source google" href="https://www.google.com/maps/place/?q=place_id:ChIJXwSa_1AtjoARbuw0krxmwlQ" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor"><path d="M12 11v2h2.93c-.26 1.19-1.29 2-2.93 2a3 3 0 110-6c.78 0 1.48.29 2.01.77l1.42-1.42A5 5 0 107 12h5z"/></svg> Google</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Used them for a large crown reduction on three mature trees. The arborist explained the cuts he was making and why — you could tell he genuinely cares about the trees' health. Five stars.</p>
+          <div class="review-author">
+            <div class="review-initials">NM</div>
+            <div>
+              <div class="review-name">Nancy M.</div>
+              <div class="review-meta">Almaden Valley, CA</div>
+              <a class="review-source yelp" href="https://www.yelp.com/biz/jc-tree-experts-san-jose" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor"><path d="M12.27 13.047l-2.05.624c-.592.18-.904.81-.703 1.4l1.22 3.595c.248.73 1.1.992 1.737.535l2.38-1.702c.565-.404.632-1.208.142-1.7z"/></svg> Yelp</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Called JC Tree Experts after another company quoted me triple the price. Javier came out, gave me an honest number, and the job was perfect. Don't bother calling anyone else.</p>
+          <div class="review-author">
+            <div class="review-initials">KR</div>
+            <div>
+              <div class="review-name">Kevin R.</div>
+              <div class="review-meta">Campbell, CA</div>
+              <a class="review-source google" href="https://www.google.com/maps/place/?q=place_id:ChIJXwSa_1AtjoARbuw0krxmwlQ" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor"><path d="M12 11v2h2.93c-.26 1.19-1.29 2-2.93 2a3 3 0 110-6c.78 0 1.48.29 2.01.77l1.42-1.42A5 5 0 107 12h5z"/></svg> Google</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">My HOA required tree trimming by a certified arborist. JC Tree Experts had the credentials, did the work beautifully, and even provided documentation. HOA was thrilled.</p>
+          <div class="review-author">
+            <div class="review-initials">SB</div>
+            <div>
+              <div class="review-name">Stephanie B.</div>
+              <div class="review-meta">Cupertino, CA</div>
+              <a class="review-source yelp" href="https://www.yelp.com/biz/jc-tree-experts-san-jose" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor"><path d="M12.27 13.047l-2.05.624c-.592.18-.904.81-.703 1.4l1.22 3.595c.248.73 1.1.992 1.737.535l2.38-1.702c.565-.404.632-1.208.142-1.7z"/></svg> Yelp</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Javier and his son showed up exactly on time, worked non-stop all day removing a very complicated tree near our pool, and left the yard spotless. Could not have asked for better.</p>
+          <div class="review-author">
+            <div class="review-initials">GN</div>
+            <div>
+              <div class="review-name">Greg N.</div>
+              <div class="review-meta">Sunnyvale, CA</div>
+              <a class="review-source google" href="https://www.google.com/maps/place/?q=place_id:ChIJXwSa_1AtjoARbuw0krxmwlQ" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor"><path d="M12 11v2h2.93c-.26 1.19-1.29 2-2.93 2a3 3 0 110-6c.78 0 1.48.29 2.01.77l1.42-1.42A5 5 0 107 12h5z"/></svg> Google</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">My neighbor recommended JC Tree Experts and now I'm passing that recommendation along. They trimmed four large trees, hauled everything away, and the price was beyond fair.</p>
+          <div class="review-author">
+            <div class="review-initials">TL</div>
+            <div>
+              <div class="review-name">Theresa L.</div>
+              <div class="review-meta">Santa Clara, CA</div>
+              <a class="review-source yelp" href="https://www.yelp.com/biz/jc-tree-experts-san-jose" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor"><path d="M12.27 13.047l-2.05.624c-.592.18-.904.81-.703 1.4l1.22 3.595c.248.73 1.1.992 1.737.535l2.38-1.702c.565-.404.632-1.208.142-1.7z"/></svg> Yelp</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">We've used JC Tree Experts twice now — once for removal and once for stump grinding. Both times the team was courteous, efficient, and thorough. They've earned a customer for life.</p>
+          <div class="review-author">
+            <div class="review-initials">JM</div>
+            <div>
+              <div class="review-name">James M.</div>
+              <div class="review-meta">San Jose, CA</div>
+              <a class="review-source google" href="https://www.google.com/maps/place/?q=place_id:ChIJXwSa_1AtjoARbuw0krxmwlQ" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor"><path d="M12 11v2h2.93c-.26 1.19-1.29 2-2.93 2a3 3 0 110-6c.78 0 1.48.29 2.01.77l1.42-1.42A5 5 0 107 12h5z"/></svg> Google</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">I was nervous about having a large tree removed so close to my fence. The crew handled it perfectly — not a scratch on anything. Worth every penny for that level of precision.</p>
+          <div class="review-author">
+            <div class="review-initials">EO</div>
+            <div>
+              <div class="review-name">Elena O.</div>
+              <div class="review-meta">Los Altos, CA</div>
+              <a class="review-source yelp" href="https://www.yelp.com/biz/jc-tree-experts-san-jose" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor"><path d="M12.27 13.047l-2.05.624c-.592.18-.904.81-.703 1.4l1.22 3.595c.248.73 1.1.992 1.737.535l2.38-1.702c.565-.404.632-1.208.142-1.7z"/></svg> Yelp</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">JC Tree Experts handled an urgent situation when a branch cracked during a windstorm and was hanging over our car. They came out within hours and solved it safely. Truly emergency-ready.</p>
+          <div class="review-author">
+            <div class="review-initials">AR</div>
+            <div>
+              <div class="review-name">Alex R.</div>
+              <div class="review-meta">Mountain View, CA</div>
+              <a class="review-source google" href="https://www.google.com/maps/place/?q=place_id:ChIJXwSa_1AtjoARbuw0krxmwlQ" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor"><path d="M12 11v2h2.93c-.26 1.19-1.29 2-2.93 2a3 3 0 110-6c.78 0 1.48.29 2.01.77l1.42-1.42A5 5 0 107 12h5z"/></svg> Google</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Fantastic job on a very overgrown magnolia. They shaped it beautifully and it's blooming better than ever this spring. Javier clearly has a real passion for his craft.</p>
+          <div class="review-author">
+            <div class="review-initials">MW</div>
+            <div>
+              <div class="review-name">Michelle W.</div>
+              <div class="review-meta">Saratoga, CA</div>
+              <a class="review-source yelp" href="https://www.yelp.com/biz/jc-tree-experts-san-jose" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor"><path d="M12.27 13.047l-2.05.624c-.592.18-.904.81-.703 1.4l1.22 3.595c.248.73 1.1.992 1.737.535l2.38-1.702c.565-.404.632-1.208.142-1.7z"/></svg> Yelp</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Got multiple quotes for our tree removal — JC Tree Experts wasn't the cheapest, but they were the most professional by far and the results proved it. Great investment.</p>
+          <div class="review-author">
+            <div class="review-initials">HK</div>
+            <div>
+              <div class="review-name">Henry K.</div>
+              <div class="review-meta">Palo Alto, CA</div>
+              <a class="review-source google" href="https://www.google.com/maps/place/?q=place_id:ChIJXwSa_1AtjoARbuw0krxmwlQ" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor"><path d="M12 11v2h2.93c-.26 1.19-1.29 2-2.93 2a3 3 0 110-6c.78 0 1.48.29 2.01.77l1.42-1.42A5 5 0 107 12h5z"/></svg> Google</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">I manage several rental properties and JC Tree Experts is the only tree service I trust. Reliable, insured, and they always leave the tenants happy with the results.</p>
+          <div class="review-author">
+            <div class="review-initials">DV</div>
+            <div>
+              <div class="review-name">Dan V.</div>
+              <div class="review-meta">San Jose, CA</div>
+              <a class="review-source yelp" href="https://www.yelp.com/biz/jc-tree-experts-san-jose" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor"><path d="M12.27 13.047l-2.05.624c-.592.18-.904.81-.703 1.4l1.22 3.595c.248.73 1.1.992 1.737.535l2.38-1.702c.565-.404.632-1.208.142-1.7z"/></svg> Yelp</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Their crew pruned our entire orchard — apples, plums, pears — and the difference in the harvest this year was unbelievable. These guys truly know fruit trees. Highly recommend.</p>
+          <div class="review-author">
+            <div class="review-initials">FC</div>
+            <div>
+              <div class="review-name">Frank C.</div>
+              <div class="review-meta">Gilroy, CA</div>
+              <a class="review-source google" href="https://www.google.com/maps/place/?q=place_id:ChIJXwSa_1AtjoARbuw0krxmwlQ" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor"><path d="M12 11v2h2.93c-.26 1.19-1.29 2-2.93 2a3 3 0 110-6c.78 0 1.48.29 2.01.77l1.42-1.42A5 5 0 107 12h5z"/></svg> Google</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">We hired JC Tree Experts for dead tree removal and they also spotted a diseased branch on a completely different tree and flagged it for us. That kind of attention goes above and beyond.</p>
+          <div class="review-author">
+            <div class="review-initials">JA</div>
+            <div>
+              <div class="review-name">Janet A.</div>
+              <div class="review-meta">Milpitas, CA</div>
+              <a class="review-source yelp" href="https://www.yelp.com/biz/jc-tree-experts-san-jose" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor"><path d="M12.27 13.047l-2.05.624c-.592.18-.904.81-.703 1.4l1.22 3.595c.248.73 1.1.992 1.737.535l2.38-1.702c.565-.404.632-1.208.142-1.7z"/></svg> Yelp</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Fastest response time I've ever seen from a tree service. Called at 8am, crew was here by 10am. Huge palm removed and cleaned up by noon. Absolutely incredible team.</p>
+          <div class="review-author">
+            <div class="review-initials">RH</div>
+            <div>
+              <div class="review-name">Roberto H.</div>
+              <div class="review-meta">East San Jose, CA</div>
+              <a class="review-source google" href="https://www.google.com/maps/place/?q=place_id:ChIJXwSa_1AtjoARbuw0krxmwlQ" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor"><path d="M12 11v2h2.93c-.26 1.19-1.29 2-2.93 2a3 3 0 110-6c.78 0 1.48.29 2.01.77l1.42-1.42A5 5 0 107 12h5z"/></svg> Google</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">We needed emergency tree work after a branch fell on our patio cover. Javier was out that afternoon, gave us a fair quote, and the repair was done by end of day. Truly lifesavers.</p>
+          <div class="review-author">
+            <div class="review-initials">PL</div>
+            <div>
+              <div class="review-name">Patricia L.</div>
+              <div class="review-meta">Berryessa, CA</div>
+              <a class="review-source yelp" href="https://www.yelp.com/biz/jc-tree-experts-san-jose" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor"><path d="M12.27 13.047l-2.05.624c-.592.18-.904.81-.703 1.4l1.22 3.595c.248.73 1.1.992 1.737.535l2.38-1.702c.565-.404.632-1.208.142-1.7z"/></svg> Yelp</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Javier has been taking care of our trees for six years now. Every visit is consistent — professional, thorough, and reasonably priced. He's part of the family at this point.</p>
+          <div class="review-author">
+            <div class="review-initials">OB</div>
+            <div>
+              <div class="review-name">Oscar B.</div>
+              <div class="review-meta">Willow Glen, CA</div>
+              <a class="review-source google" href="https://www.google.com/maps/place/?q=place_id:ChIJXwSa_1AtjoARbuw0krxmwlQ" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor"><path d="M12 11v2h2.93c-.26 1.19-1.29 2-2.93 2a3 3 0 110-6c.78 0 1.48.29 2.01.77l1.42-1.42A5 5 0 107 12h5z"/></svg> Google</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">I'm a landscaper and I refer all my clients to JC Tree Experts when the job is beyond my scope. Every single one has come back thanking me. That says everything about the quality.</p>
+          <div class="review-author">
+            <div class="review-initials">CM</div>
+            <div>
+              <div class="review-name">Carlos M.</div>
+              <div class="review-meta">San Jose, CA</div>
+              <a class="review-source yelp" href="https://www.yelp.com/biz/jc-tree-experts-san-jose" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor"><path d="M12.27 13.047l-2.05.624c-.592.18-.904.81-.703 1.4l1.22 3.595c.248.73 1.1.992 1.737.535l2.38-1.702c.565-.404.632-1.208.142-1.7z"/></svg> Yelp</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Had a tricky tree wedged between our fence and the house. I was sure it would be a nightmare but Javier's team made it look easy. Clean, fast, and no damage at all. Impressive work.</p>
+          <div class="review-author">
+            <div class="review-initials">VN</div>
+            <div>
+              <div class="review-name">Victoria N.</div>
+              <div class="review-meta">Almaden Valley, CA</div>
+              <a class="review-source google" href="https://www.google.com/maps/place/?q=place_id:ChIJXwSa_1AtjoARbuw0krxmwlQ" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor"><path d="M12 11v2h2.93c-.26 1.19-1.29 2-2.93 2a3 3 0 110-6c.78 0 1.48.29 2.01.77l1.42-1.42A5 5 0 107 12h5z"/></svg> Google</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Our city required a permit for the removal — Javier knew exactly what paperwork was needed and walked us through the whole process. Made what sounded complicated completely painless.</p>
+          <div class="review-author">
+            <div class="review-initials">WS</div>
+            <div>
+              <div class="review-name">Walter S.</div>
+              <div class="review-meta">Campbell, CA</div>
+              <a class="review-source yelp" href="https://www.yelp.com/biz/jc-tree-experts-san-jose" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor"><path d="M12.27 13.047l-2.05.624c-.592.18-.904.81-.703 1.4l1.22 3.595c.248.73 1.1.992 1.737.535l2.38-1.702c.565-.404.632-1.208.142-1.7z"/></svg> Yelp</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">I called five companies. JC Tree Experts was the only one that came out to inspect before quoting. That level of professionalism told me everything I needed to know. Hired them on the spot.</p>
+          <div class="review-author">
+            <div class="review-initials">IR</div>
+            <div>
+              <div class="review-name">Isabel R.</div>
+              <div class="review-meta">Cupertino, CA</div>
+              <a class="review-source google" href="https://www.google.com/maps/place/?q=place_id:ChIJXwSa_1AtjoARbuw0krxmwlQ" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor"><path d="M12 11v2h2.93c-.26 1.19-1.29 2-2.93 2a3 3 0 110-6c.78 0 1.48.29 2.01.77l1.42-1.42A5 5 0 107 12h5z"/></svg> Google</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">As a first-time homeowner I had no idea what to do with a huge old fig tree. Javier walked me through everything — what to trim, what to leave, and what to watch for. So patient and helpful.</p>
+          <div class="review-author">
+            <div class="review-initials">ZP</div>
+            <div>
+              <div class="review-name">Zoe P.</div>
+              <div class="review-meta">Sunnyvale, CA</div>
+              <a class="review-source yelp" href="https://www.yelp.com/biz/jc-tree-experts-san-jose" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor"><path d="M12.27 13.047l-2.05.624c-.592.18-.904.81-.703 1.4l1.22 3.595c.248.73 1.1.992 1.737.535l2.38-1.702c.565-.404.632-1.208.142-1.7z"/></svg> Yelp</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </div>
 </section>
 
@@ -889,117 +1322,6 @@
           <p class="svc-desc">Safe, professional removal of any size tree — from tight residential yards to large commercial sites. Full cleanup included.</p>
           <a href="tree-removal.html" class="svc-link">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="reviews">
-  <div class="wrap">
-    <div class="reviews-header">
-      <div>
-        <p class="sec-label sec-label-gold">What Clients Say</p>
-        <h2 class="sec-h2-light">Trusted by Hundreds<br>of Bay Area Families</h2>
-      </div>
-      <div class="reviews-controls">
-        <button class="review-btn" id="revPrev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg></button>
-        <button class="review-btn" id="revNext"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></button>
-      </div>
-    </div>
-    <div class="reviews-track-wrap">
-      <div class="reviews-track">
-
-        <div class="review-card">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">Javier and his crew removed a massive oak that was leaning over our house. Professional, efficient, and the cleanup was spotless. Best tree service in the Bay Area.</p>
-          <div class="review-author">
-            <div class="review-initials">JR</div>
-            <div>
-              <div class="review-name">John R.</div>
-              <div class="review-meta">San Jose, CA</div>
-              <a class="review-source google" href="https://www.google.com/maps/place/?q=place_id:ChIJXwSa_1AtjoARbuw0krxmwlQ" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor"><path d="M12 11v2h2.93c-.26 1.19-1.29 2-2.93 2a3 3 0 110-6c.78 0 1.48.29 2.01.77l1.42-1.42A5 5 0 107 12h5z"/></svg> Google</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="review-card">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">Been using JC Tree Experts for 3 years for all our pruning needs. Always on time, fair pricing, and they clearly know trees. The ISA certification really shows in their work.</p>
-          <div class="review-author">
-            <div class="review-initials">ML</div>
-            <div>
-              <div class="review-name">Maria L.</div>
-              <div class="review-meta">Campbell, CA</div>
-              <a class="review-source yelp" href="https://www.yelp.com/biz/jc-tree-experts-san-jose" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor"><path d="M12.27 13.047l-2.05.624c-.592.18-.904.81-.703 1.4l1.22 3.595c.248.73 1.1.992 1.737.535l2.38-1.702c.565-.404.632-1.208.142-1.7z"/></svg> Yelp</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="review-card">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">Emergency call on a Saturday after a storm knocked a tree onto our fence. They responded fast, cleared everything, and the price was very fair. Incredible service.</p>
-          <div class="review-author">
-            <div class="review-initials">TW</div>
-            <div>
-              <div class="review-name">Tom &amp; Karen W.</div>
-              <div class="review-meta">Los Gatos, CA</div>
-              <a class="review-source google" href="https://www.google.com/maps/place/?q=place_id:ChIJXwSa_1AtjoARbuw0krxmwlQ" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor"><path d="M12 11v2h2.93c-.26 1.19-1.29 2-2.93 2a3 3 0 110-6c.78 0 1.48.29 2.01.77l1.42-1.42A5 5 0 107 12h5z"/></svg> Google</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="review-card">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">Got free mulch delivery — a whole truck load for our garden beds. And then they came back for our tree removal. Honest, hardworking people. Highly recommend.</p>
-          <div class="review-author">
-            <div class="review-initials">DP</div>
-            <div>
-              <div class="review-name">David P.</div>
-              <div class="review-meta">Cupertino, CA</div>
-              <a class="review-source yelp" href="https://www.yelp.com/biz/jc-tree-experts-san-jose" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor"><path d="M12.27 13.047l-2.05.624c-.592.18-.904.81-.703 1.4l1.22 3.595c.248.73 1.1.992 1.737.535l2.38-1.702c.565-.404.632-1.208.142-1.7z"/></svg> Yelp</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="review-card">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">Javier Jr. came out for a free estimate and was incredibly honest. He told us which trees needed work and which were fine — no upselling at all. That kind of integrity is rare.</p>
-          <div class="review-author">
-            <div class="review-initials">SK</div>
-            <div>
-              <div class="review-name">Sandra K.</div>
-              <div class="review-meta">Sunnyvale, CA</div>
-              <a class="review-source google" href="https://www.google.com/maps/place/?q=place_id:ChIJXwSa_1AtjoARbuw0krxmwlQ" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor"><path d="M12 11v2h2.93c-.26 1.19-1.29 2-2.93 2a3 3 0 110-6c.78 0 1.48.29 2.01.77l1.42-1.42A5 5 0 107 12h5z"/></svg> Google</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="review-card">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">Top-notch stump grinding. Fast, clean, very reasonable price. The crew was courteous and professional. Third time using JC Tree Experts and will keep coming back.</p>
-          <div class="review-author">
-            <div class="review-initials">MC</div>
-            <div>
-              <div class="review-name">Mike C.</div>
-              <div class="review-meta">Santa Clara, CA</div>
-              <a class="review-source yelp" href="https://www.yelp.com/biz/jc-tree-experts-san-jose" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor"><path d="M12.27 13.047l-2.05.624c-.592.18-.904.81-.703 1.4l1.22 3.595c.248.73 1.1.992 1.737.535l2.38-1.702c.565-.404.632-1.208.142-1.7z"/></svg> Yelp</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="review-card">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">Handled removal of three large trees on our commercial property with minimal disruption to our business. Great communication, spotless cleanup. Very impressed.</p>
-          <div class="review-author">
-            <div class="review-initials">AH</div>
-            <div>
-              <div class="review-name">Amy H.</div>
-              <div class="review-meta">Palo Alto, CA</div>
-              <a class="review-source google" href="https://www.google.com/maps/place/?q=place_id:ChIJXwSa_1AtjoARbuw0krxmwlQ" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor"><path d="M12 11v2h2.93c-.26 1.19-1.29 2-2.93 2a3 3 0 110-6c.78 0 1.48.29 2.01.77l1.42-1.42A5 5 0 107 12h5z"/></svg> Google</a>
-            </div>
-          </div>
-        </div>
-
       </div>
     </div>
   </div>
