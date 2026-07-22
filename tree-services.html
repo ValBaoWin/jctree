@@ -3,12 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Google Analytics & Ads -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-649319874"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-9QSV6HJD65"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+  function gtag() { dataLayer.push(arguments); }
   gtag('js', new Date());
   gtag('config', 'AW-649319874');
   gtag('config', 'G-9QSV6HJD65');
@@ -22,41 +21,54 @@
 <meta property="og:description" content="ISA Certified tree pruning, stump grinding, hedge trimming & consulting. Free estimates. Call 408-858-6123.">
 <meta property="og:image" content="https://jctreeexperts.net/images/tree-pruning.jpg">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://jctreeexperts.net/tree-services.html">
 <meta name="twitter:title" content="Tree Services San Jose & Bay Area | JC Tree Experts">
 <meta name="twitter:description" content="ISA Certified tree pruning, stump grinding & more. Free estimates. Call 408-858-6123.">
 <meta name="twitter:image" content="https://jctreeexperts.net/images/tree-pruning.jpg">
 <link rel="stylesheet" href="styles.css">
 <style>
-.services-detail{padding:6rem 0;background:var(--cream)}
-.svc-detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-bottom:5rem;padding-bottom:5rem;border-bottom:1px solid var(--cream2)}
-.svc-detail-grid:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
-.svc-detail-grid.reverse{direction:rtl}
-.svc-detail-grid.reverse > *{direction:ltr}
-.svc-detail-grid .prose{margin-top:1rem}
-.svc-detail-grid .prose .btn{margin-top:.5rem}
-.svc-detail-img{border-radius:4px;overflow:hidden;box-shadow:var(--sh-lg)}
-.svc-detail-img img{width:100%;height:380px;object-fit:cover;display:block;transition:transform .6s var(--ease)}
-.svc-detail-img:hover img{transform:scale(1.04)}
-.svc-num-large{font-family:var(--serif);font-size:5rem;color:var(--cream2);line-height:1;margin-bottom:-.5rem;font-weight:normal}
-.svc-area{background:var(--dark);padding:4rem 0}
-.svc-area .sec-label{color:var(--gold)}
-.svc-area-cta{margin-top:2.5rem;text-align:center}
-.area-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;margin-top:2.5rem}
-.area-item{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);padding:1rem;text-align:center;font-size:.85rem;color:rgba(255,255,255,.7);border-radius:2px;transition:all .2s}
-.area-item:hover{background:rgba(140,138,62,.15);border-color:var(--gold);color:#fff}
-.yelp-text{font-weight:800;font-size:13px;line-height:1;font-family:Arial,sans-serif}
-@media(max-width:900px){.svc-detail-grid{grid-template-columns:1fr;gap:2rem;direction:ltr}.area-grid{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:540px){.area-grid{grid-template-columns:repeat(2,1fr)}}
+.services-detail { padding: 6rem 0; background: var(--cream); }
+.svc-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-bottom: 5rem; padding-bottom: 5rem; border-bottom: 1px solid var(--cream2); }
+.svc-detail-grid:last-child { border: none; margin-bottom: 0; padding-bottom: 0; }
+.svc-detail-grid.reverse { direction: rtl; }
+.svc-detail-grid.reverse > * { direction: ltr; }
+.svc-detail-grid .prose { margin-top: 1rem; }
+.svc-detail-grid .prose .btn { margin-top: 0.5rem; }
+.svc-detail-img { border-radius: 4px; overflow: hidden; box-shadow: var(--sh-lg); }
+.svc-detail-img img { width: 100%; height: 380px; object-fit: cover; display: block; transition: transform 0.6s var(--ease); }
+.svc-detail-img:hover img { transform: scale(1.04); }
+.svc-num-large { font-family: var(--serif); font-size: 5rem; color: var(--cream2); line-height: 1; margin-bottom: -0.5rem; }
+.svc-area { background: var(--dark); padding: 4rem 0; }
+.svc-area .sec-label { color: var(--gold); }
+.svc-area-cta { margin-top: 2.5rem; text-align: center; }
+.area-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; margin-top: 2.5rem; }
+.area-item { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.08); padding: 1rem; text-align: center; font-size: 0.85rem; color: rgba(255, 255, 255, 0.7); border-radius: 2px; transition: all 0.2s; }
+.area-item:hover { background: rgba(140, 138, 62, 0.15); border-color: var(--gold); color: #fff; }
+.yelp-text { font-weight: 800; font-size: 13px; line-height: 1; font-family: Arial, sans-serif; }
+@media (max-width: 900px) {
+  .svc-detail-grid { grid-template-columns: 1fr; gap: 2rem; direction: ltr; }
+  .area-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 540px) {
+  .area-grid { grid-template-columns: repeat(2, 1fr); }
+}
 </style>
 </head>
 <body>
 
 <nav id="nav" class="wrap">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="JC Tree Experts"><div><div class="nav-logo-name">JC Tree Experts</div><span class="nav-logo-est">Est. 1986</span></div></a>
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo.png" alt="JC Tree Experts">
+      <div>
+        <div class="nav-logo-name">JC Tree Experts</div>
+        <span class="nav-logo-est">Est. 1986</span>
+      </div>
+    </a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="tree-services.html">Tree Services</a></li>
+      <li><a href="arborist.html">Arborist</a></li>
       <li><a href="tree-removal.html">Tree Removal</a></li>
       <li><a href="limit-liability.html">Limit Your Liability</a></li>
       <li><a href="free-mulch.html">Free Mulch</a></li>
@@ -76,6 +88,7 @@
 <div class="mob-menu" id="mobMenu">
   <a href="index.html" class="mob-link">Home</a>
   <a href="tree-services.html" class="mob-link">Tree Services</a>
+  <a href="arborist.html" class="mob-link">Arborist</a>
   <a href="tree-removal.html" class="mob-link">Tree Removal</a>
   <a href="limit-liability.html" class="mob-link">Limit Your Liability</a>
   <a href="free-mulch.html" class="mob-link">Free Mulch</a>
@@ -90,7 +103,7 @@
 </div>
 
 <div class="page-hero">
-  <div class="page-hero-bg" style="background-image:url('images/tree-pruning.jpg')"></div>
+  <div class="page-hero-bg" style="background-image: url('images/tree-pruning.jpg');"></div>
   <div class="page-hero-ov"></div>
   <div class="wrap page-hero-c">
     <p class="page-hero-label">Our Services</p>
@@ -101,44 +114,44 @@
 <section class="services-detail wrap">
   <div class="svc-detail-grid fu">
     <div class="svc-detail-img"><img src="images/tree-pruning.jpg" alt="Tree Pruning"></div>
-      <div>
-        <div class="svc-num-large">01</div>
-        <p class="sec-label">Structural Health</p>
-        <h2 class="sec-h2">Tree Pruning</h2>
-        <div class="prose">
-          <p>Proper pruning is the single most important thing you can do for a tree's long-term health. Our ISA Certified Arborists use science-based techniques to remove only what needs to go — never more.</p>
-          <p>We use spikeless climbing methods to protect the bark and cambium layer, and we follow ANSI A300 pruning standards on every job.</p>
-          <ul>
-            <li>Crown cleaning, thinning &amp; raising</li>
-            <li>Structural pruning for young trees</li>
-            <li>Vista pruning &amp; view enhancement</li>
-            <li>Clearance pruning from structures &amp; utilities</li>
-          </ul>
-          <a href="contact.html" class="btn btn-gold">Get a Free Estimate</a>
-        </div>
+    <div>
+      <div class="svc-num-large">01</div>
+      <p class="sec-label">Structural Health</p>
+      <h2 class="sec-h2">Tree Pruning</h2>
+      <div class="prose">
+        <p>Proper pruning is the single most important thing you can do for a tree's long-term health. Our ISA Certified Arborists use science-based techniques to remove only what needs to go — never more.</p>
+        <p>We use spikeless climbing methods to protect the bark and cambium layer, and we follow ANSI A300 pruning standards on every job.</p>
+        <ul>
+          <li>Crown cleaning, thinning &amp; raising</li>
+          <li>Structural pruning for young trees</li>
+          <li>Vista pruning &amp; view enhancement</li>
+          <li>Clearance pruning from structures &amp; utilities</li>
+        </ul>
+        <a href="contact.html" class="btn btn-gold">Get a Free Estimate</a>
       </div>
     </div>
+  </div>
 
-    <div class="svc-detail-grid reverse fu">
-      <div class="svc-detail-img"><img src="images/hedge-trimming.jpg" alt="Palm Tree Services"></div>
-      <div>
-        <div class="svc-num-large">02</div>
-        <p class="sec-label">Residential &amp; Commercial</p>
-        <h2 class="sec-h2">Palm Tree Services</h2>
-        <div class="prose">
-          <p>Palms require specialized care to stay healthy and safe. Our certified arborists handle everything from routine frond removal to full palm removal — keeping your property clean and your palms thriving.</p>
-          <ul>
-            <li>Frond and dead material removal</li>
-            <li>Palm trimming &amp; shaping</li>
-            <li>Palm health assessments</li>
-            <li>Full palm removal &amp; stump grinding</li>
-          </ul>
-          <a href="contact.html" class="btn btn-gold">Get a Free Estimate</a>
-        </div>
+  <div class="svc-detail-grid reverse fu">
+    <div class="svc-detail-img"><img src="images/hedge-trimming.jpg" alt="Palm Tree Services"></div>
+    <div>
+      <div class="svc-num-large">02</div>
+      <p class="sec-label">Residential &amp; Commercial</p>
+      <h2 class="sec-h2">Palm Tree Services</h2>
+      <div class="prose">
+        <p>Palms require specialized care to stay healthy and safe. Our certified arborists handle everything from routine frond removal to full palm removal — keeping your property clean and your palms thriving.</p>
+        <ul>
+          <li>Frond and dead material removal</li>
+          <li>Palm trimming &amp; shaping</li>
+          <li>Palm health assessments</li>
+          <li>Full palm removal &amp; stump grinding</li>
+        </ul>
+        <a href="contact.html" class="btn btn-gold">Get a Free Estimate</a>
       </div>
     </div>
+  </div>
 
-    <div class="svc-detail-grid fu">
+  <div class="svc-detail-grid fu">
     <div class="svc-detail-img"><img src="images/stump-grinding.jpg" alt="Stump Grinding"></div>
     <div>
       <div class="svc-num-large">03</div>
@@ -158,7 +171,7 @@
   </div>
 
   <div class="svc-detail-grid reverse fu">
-  <div class="svc-detail-img"><img src="images/tree-removal.jpg" alt="Tree Removal"></div>
+    <div class="svc-detail-img"><img src="images/tree-removal.jpg" alt="Tree Removal"></div>
     <div>
       <div class="svc-num-large">04</div>
       <p class="sec-label">Safe &amp; Professional</p>
@@ -172,6 +185,63 @@
           <li>Arborist reports to justify tree removals</li>
         </ul>
         <a href="tree-removal.html" class="btn btn-gold">Learn More</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="svc-detail-grid fu">
+    <div class="svc-detail-img"><img src="images/hazard-removal.jpg" alt="Land Clearing"></div>
+    <div>
+      <div class="svc-num-large">05</div>
+      <p class="sec-label">Site Preparation &amp; Fire Mitigation</p>
+      <h2 class="sec-h2">Land Clearing</h2>
+      <div class="prose">
+        <p>Whether you're preparing a lot for construction, reclaiming overgrown property, or reducing fire risk, our team has the equipment and expertise to clear any size site efficiently and safely.</p>
+        <ul>
+          <li>Full-site brush and tree clearing</li>
+          <li>Fire mitigation and defensible space clearing</li>
+          <li>Construction lot preparation</li>
+          <li>Debris hauling and cleanup included</li>
+        </ul>
+        <a href="contact.html" class="btn btn-gold">Get a Free Estimate</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="svc-detail-grid reverse fu">
+    <div class="svc-detail-img"><img src="images/isa-certified.jpg" alt="Consulting Arborist"></div>
+    <div>
+      <div class="svc-num-large">06</div>
+      <p class="sec-label">Expert Assessment &amp; Reports</p>
+      <h2 class="sec-h2">Consulting Arborist</h2>
+      <div class="prose">
+        <p>Sometimes you need answers, not just work done. Our ISA Certified Arborist provides formal assessments, written reports, and professional opinions for any tree situation — from HOA disputes to pre-purchase inspections.</p>
+        <ul>
+          <li>Written arborist reports for permits &amp; disputes</li>
+          <li>Tree risk and health assessments</li>
+          <li>Pre-construction tree preservation plans</li>
+          <li>Expert witness consultation</li>
+        </ul>
+        <a href="arborist.html" class="btn btn-gold">Learn About ISA Certification</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="svc-detail-grid fu">
+    <div class="svc-detail-img"><img src="images/giving-back.jpg" alt="Tree Planting"></div>
+    <div>
+      <div class="svc-num-large">07</div>
+      <p class="sec-label">Right Tree, Right Place</p>
+      <h2 class="sec-h2">Tree Planting</h2>
+      <div class="prose">
+        <p>A tree planted well lasts generations. Our ISA Certified Arborist helps you choose the right species for your Bay Area soil and climate, then plants it with proper technique for long-term success.</p>
+        <ul>
+          <li>Species selection for Bay Area conditions</li>
+          <li>Proper planting depth and backfill technique</li>
+          <li>Staking, mulching, and establishment care</li>
+          <li>Replacement of removed trees</li>
+        </ul>
+        <a href="contact.html" class="btn btn-gold">Get a Free Estimate</a>
       </div>
     </div>
   </div>
@@ -202,13 +272,37 @@
       <p>Family-owned Bay Area tree experts since 1986. Licensed, bonded, and insured.</p>
       <div class="ft-socials">
         <a href="https://www.yelp.com/biz/jc-tree-experts-san-jose" target="_blank" class="ft-social" title="Yelp"><span class="yelp-text">y</span></a>
-        <a href="https://www.instagram.com/jctreeexperts" target="_blank" class="ft-social" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor" stroke="none"/></svg></a>
-        <a href="https://www.facebook.com/jctreeexperts" target="_blank" class="ft-social" title="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+        <a href="https://www.instagram.com/jctreeexperts" target="_blank" class="ft-social" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg></a>
+        <a href="https://www.facebook.com/jctreeexperts" target="_blank" class="ft-social" title="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
       </div>
     </div>
-    <div class="ft-col"><h4>Services</h4><ul class="ft-links"><li><a href="tree-removal.html">Tree Removal</a></li><li><a href="tree-services.html">Tree Pruning</a></li><li><a href="tree-services.html">Palm Tree Services</a></li><li><a href="tree-services.html">Stump Grinding</a></li><li><a href="tree-services.html">Tree Care</a></li></ul></div>
-    <div class="ft-col"><h4>Company</h4><ul class="ft-links"><li><a href="about.html">About Us</a></li><li><a href="limit-liability.html">Limit Your Liability</a></li><li><a href="free-mulch.html">Free Mulch</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-    <div class="ft-col"><h4>Contact</h4><ul class="ft-links"><li><a href="tel:4088586123">408-858-6123</a></li><li><a href="mailto:Jctree1990@yahoo.com">Jctree1990@yahoo.com</a></li><li><a href="contact.html">Free Estimate</a></li></ul></div>
+    <div class="ft-col">
+      <h4>Services</h4>
+      <ul class="ft-links">
+        <li><a href="tree-removal.html">Tree Removal</a></li>
+        <li><a href="tree-services.html">Tree Pruning</a></li>
+        <li><a href="tree-services.html">Palm Tree Services</a></li>
+        <li><a href="tree-services.html">Stump Grinding</a></li>
+        <li><a href="tree-services.html">Tree Care</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <h4>Company</h4>
+      <ul class="ft-links">
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="limit-liability.html">Limit Your Liability</a></li>
+        <li><a href="free-mulch.html">Free Mulch</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <h4>Contact</h4>
+      <ul class="ft-links">
+        <li><a href="tel:4088586123">408-858-6123</a></li>
+        <li><a href="mailto:Jctree1990@yahoo.com">Jctree1990@yahoo.com</a></li>
+        <li><a href="contact.html">Free Estimate</a></li>
+      </ul>
+    </div>
   </div>
   <div class="ft-bottom">
     <p>© 2026 JC Tree Experts Inc. All rights reserved.</p>
